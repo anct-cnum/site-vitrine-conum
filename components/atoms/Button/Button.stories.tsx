@@ -23,3 +23,11 @@ export const Secondary: Story = {
     priority: "secondary",
   },
 };
+
+export const AvecIcone: Story = {
+  args: {
+    children: "J'ai une question",
+    priority: "tertiary",
+    iconId: "fr-icon-question-answer-line",
+  },
+};

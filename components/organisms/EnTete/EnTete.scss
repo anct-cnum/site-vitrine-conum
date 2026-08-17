@@ -1,0 +1,23 @@
+.fr-header__tools-links .header-btn-primary {
+  background-color: var(--background-action-high-blue-france);
+  color: var(--text-inverted-blue-france);
+  --hover: var(--background-action-high-blue-france-hover);
+  --active: var(--background-action-high-blue-france-active);
+}
+
+.fr-header__operator {
+  border-left: 1px solid var(--border-default-grey);
+}
+
+@media (max-width: 61.9375em) {
+  .fr-nav__link[aria-current]:not([aria-current="false"])::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -0.75rem;
+    width: 2px;
+    height: 1.5rem;
+    background-color: var(--background-active-blue-france);
+  }
+}
