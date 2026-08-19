@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AccompagnementsSection from "@/components/organisms/AccompagnementsSection/AccompagnementsSection";
 import BlocCtaSection from "@/components/organisms/BlocCtaSection/BlocCtaSection";
 import FaqSection from "@/components/organisms/FaqSection/FaqSection";
-import HeroSection from "@/components/organisms/HeroSection/HeroSection";
+import HeroAccueilSection from "@/components/organisms/HeroAccueilSection/HeroAccueilSection";
 import OrientationSection from "@/components/organisms/OrientationSection/OrientationSection";
 import RessourcesSection from "@/components/organisms/RessourcesSection/RessourcesSection";
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main id="content">
-      <HeroSection />
+      <HeroAccueilSection />
       <AccompagnementsSection />
       <OrientationSection />
       <BlocCtaSection

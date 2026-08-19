@@ -1,0 +1,48 @@
+.section {
+  padding: 4rem 0 5rem;
+}
+
+.conteneur {
+  padding: 0 16.5rem;
+
+  @media (max-width: 47.99em) {
+    padding: 0 1.5rem;
+  }
+}
+
+.liste {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.document {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sousTitre {
+  color: var(--blue-france-sun-113-625);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+
+  @media (max-width: 47.99em) {
+    font-size: 1.25rem;
+  }
+}
+
+.texte {
+  color: var(--text-title-grey);
+  margin: 0;
+}
+
+.lien {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--text-action-high-blue-france);
+}

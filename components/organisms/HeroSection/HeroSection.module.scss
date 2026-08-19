@@ -1,0 +1,43 @@
+.section {
+  background-color: var(--background-contrast-brown-opera);
+
+  @media (min-width: 48em) {
+    padding: 3rem 0 4rem;
+  }
+}
+
+.conteneur {
+  @media (max-width: 47.99em) {
+    padding: 0 2rem;
+  }
+}
+
+.texte {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: var(--text-title-grey);
+
+  @media (max-width: 47.99em) {
+    font-size: 1rem;
+  }
+}
+
+.contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 47.5rem;
+  margin-inline: auto;
+  gap: 2.5rem;
+
+  @media (max-width: 47.99em) {
+    gap: 1.25rem;
+  }
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
