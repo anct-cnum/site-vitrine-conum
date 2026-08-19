@@ -72,8 +72,8 @@ export default function EnTete() {
         },
         {
           text: "Devenir conseiller numérique",
-          linkProps: { href: "/candidature-conseiller" },
-          isActive: pathname === "/candidature-conseiller",
+          linkProps: { href: "/devenir-conseiller" },
+          isActive: pathname === "/devenir-conseiller",
         },
         {
           text: "Formation",

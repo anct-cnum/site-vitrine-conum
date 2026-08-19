@@ -1,0 +1,61 @@
+.carte {
+  display: flex;
+  background-color: var(--background-default-grey);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 18, 0.16);
+  padding: 2rem;
+}
+
+.horizontale {
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.verticale {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  background-image: url("/images/pictos/hexagone.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: var(--artwork-major-brown-opera);
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  .verticale & {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1rem;
+  }
+}
+
+.titre {
+  color: var(--text-title-blue-france);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+
+  .verticale & {
+    font-size: 1.125rem;
+  }
+}
+
+.texte {
+  color: var(--text-default-grey);
+  font-size: 1rem;
+  margin: 0;
+
+  .verticale & {
+    font-size: 0.875rem;
+  }
+}

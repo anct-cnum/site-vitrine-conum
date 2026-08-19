@@ -1,0 +1,58 @@
+@use "../../../styles/mixins" as *;
+
+.section {
+  padding: 4rem 0 5rem;
+
+  @media (max-width: 47.99em) {
+    padding: 2.5rem 0;
+  }
+}
+
+.conteneur {
+  @include conteneur-standard;
+}
+
+.grille {
+  gap: 5rem;
+
+  @media (max-width: 47.99em) {
+    gap: 2rem;
+  }
+}
+
+.titre {
+  @media (min-width: 78em) {
+    white-space: nowrap;
+  }
+}
+
+.colonneContenu {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 48em) {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 32rem;
+    min-width: 0;
+  }
+}
+
+.colonneImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 48em) {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 24rem;
+  aspect-ratio: 1 / 1;
+}

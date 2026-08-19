@@ -1,0 +1,38 @@
+.liste {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  &:not(:first-child) {
+    border-top: 1px solid var(--border-default-grey);
+    padding-top: 1rem;
+  }
+}
+
+.icone {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.itemTitre {
+  color: var(--text-title-blue-france);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.itemTexte {
+  color: var(--text-default-grey);
+  font-size: 1rem;
+  margin: 0;
+}

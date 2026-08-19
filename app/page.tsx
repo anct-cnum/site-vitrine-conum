@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Conseiller Numérique — Accompagnement et autonomie numérique",
   description:
     "Découvrez les services des conseillers numériques, trouvez un accompagnement près de chez vous et informez-vous sur le Label Conseiller Numérique.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Conseiller Numérique — Accompagnement et autonomie numérique",
     description:
@@ -47,7 +50,7 @@ export default function Home() {
           "Le conseiller numérique accompagne les Français dans leurs usages du numérique au quotidien. Le recrutement passe par des structures conventionnées (collectivités, associations, médiathèques, …)",
         ]}
         ctaLabel="En savoir plus"
-        ctaHref="/candidature-conseiller"
+        ctaHref="/devenir-conseiller"
         img={{
           src: "/images/devenir-conseiller-illustration.svg",
           alt: "",

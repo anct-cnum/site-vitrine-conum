@@ -35,7 +35,7 @@ export const AvecFondEtImageTailleFixe: Story = {
       "Le conseiller numérique accompagne les Français dans leurs usages du numérique au quotidien. Le recrutement passe par des structures conventionnées (collectivités, associations, médiathèques, …)",
     ],
     ctaLabel: "En savoir plus",
-    ctaHref: "/candidature-conseiller",
+    ctaHref: "/devenir-conseiller",
     img: {
       src: "/images/devenir-conseiller-illustration.svg",
       alt: "",
