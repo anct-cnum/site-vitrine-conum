@@ -1,0 +1,81 @@
+.banniere {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  background-color: var(--background-alt-brown-caramel);
+  background-image:
+    url("/images/hero/hero-decor-gauche.svg"),
+    url("/images/hero/hero-decor-droite.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    left center,
+    right center;
+  background-size: auto;
+
+  @media (max-width: 47.99em) {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+    background-image: url("/images/hero/hero-decor-mobile.svg");
+    background-position: center top;
+    background-size: 100% auto;
+  }
+}
+
+.contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 45rem;
+  margin-inline: auto;
+  text-align: center;
+  gap: 2.5rem;
+  padding: 0 1rem;
+
+  @media (max-width: 47.99em) {
+    gap: 1.25rem;
+  }
+}
+
+.logo {
+  height: 8rem;
+  width: auto;
+
+  @media (max-width: 47.99em) {
+    height: 5rem;
+  }
+}
+
+.titre {
+  margin: 0;
+  color: var(--blue-france-sun-113-625);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.5rem;
+
+  @media (max-width: 47.99em) {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.accroche {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2rem;
+
+  @media (max-width: 47.99em) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.illustrationMobile {
+  display: none;
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 47.99em) {
+    display: block;
+  }
+}

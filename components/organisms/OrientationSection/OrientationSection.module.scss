@@ -1,0 +1,42 @@
+.section {
+  background-color: var(--background-flat-blue-france);
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+
+  @media (max-width: 47.99em) {
+    padding: 2.5rem 0;
+  }
+}
+
+.conteneur {
+  padding: 0 9rem;
+
+  @media (max-width: 47.99em) {
+    padding: 0 1.5rem;
+  }
+}
+
+.titre,
+.texteIntro {
+  color: var(--text-inverted-grey);
+  text-align: center;
+
+  @media (max-width: 47.99em) {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+}
+
+.titre {
+  font-size: 2.25rem;
+
+  @media (max-width: 47.99em) {
+    font-size: 1.5rem;
+  }
+}
+
+.texteIntro {
+  @media (max-width: 47.99em) {
+    font-size: 1rem !important;
+  }
+}

@@ -1,0 +1,115 @@
+.section {
+  background-color: var(--background-contrast-brown-opera);
+  padding: 3.5rem 0 5rem;
+
+  @media (max-width: 47.99em) {
+    padding: 2.5rem 0;
+  }
+}
+
+.conteneur {
+  padding: 0 9rem;
+
+  @media (max-width: 47.99em) {
+    padding: 0 1rem;
+  }
+}
+
+.grille {
+  justify-content: center;
+  gap: 1.5rem 1rem;
+}
+
+.colonne {
+  @media (min-width: 48em) {
+    flex: 0 0 18.75rem;
+    width: auto;
+    max-width: none;
+  }
+}
+
+.illustration {
+  display: block;
+  width: 16.0625rem;
+  height: 11.935rem;
+  margin: 0 auto 2rem;
+}
+
+.titre {
+  color: var(--blue-france-sun-113-625);
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 1rem;
+
+  @media (max-width: 47.99em) {
+    font-size: 1.5rem;
+  }
+}
+
+.texte {
+  color: var(--text-title-grey);
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+
+  @media (max-width: 47.99em) {
+    font-size: 1rem;
+  }
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  width: 18.75rem;
+  height: 23rem;
+  min-width: 18rem;
+  max-width: 28.75rem;
+  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  box-shadow: var(--overlap-shadow);
+
+  @media (max-width: 47.99em) {
+    width: 100%;
+    height: 18.0625rem;
+  }
+}
+
+.tileContenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.lien {
+  color: var(--blue-france-sun-113-625);
+  font-size: 1rem;
+  font-weight: 500;
+  --underline-img: none;
+
+  @media (max-width: 47.99em) {
+    font-size: 1.125rem;
+  }
+}
+
+.tileTitre {
+  color: var(--text-default-grey);
+  font-size: 1.125rem;
+
+  &::before {
+    display: none !important;
+  }
+}
+
+.tileTexte {
+  color: var(--text-default-grey);
+  font-size: 0.875rem;
+}
+
+.tileIcon {
+  width: 5.5rem;
+  height: 5.5rem;
+}

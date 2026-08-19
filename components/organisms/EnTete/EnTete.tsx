@@ -30,7 +30,7 @@ export default function EnTete() {
       }
       operatorLogo={{
         orientation: "horizontal",
-        imgUrl: "/images/Conseiller-numerique-logo.svg",
+        imgUrl: "/images/logo-conseiller-numerique.svg",
         alt: "Conseiller numérique",
       }}
       quickAccessItems={[
@@ -40,7 +40,7 @@ export default function EnTete() {
           linkProps={{
             href: "https://aide.conseiller-numerique.gouv.fr/fr/",
             target: "_blank",
-            rel: "noreferrer",
+            rel: "noopener noreferrer",
           }}
         >
           J'ai une question{" "}
@@ -52,7 +52,7 @@ export default function EnTete() {
           linkProps={{
             href: "https://mon.inclusion-numerique.anct.gouv.fr/connexion-label",
             target: "_blank",
-            rel: "noreferrer",
+            rel: "noopener noreferrer",
           }}
         >
           Demander le label
@@ -88,9 +88,9 @@ export default function EnTete() {
             </>
           ),
           linkProps: {
-            href: "https://cartographie.societenumerique.gouv.fr/",
+            href: "https://cartographie.societenumerique.gouv.fr/?dispositif_programmes_nationaux=Conseillers+num%C3%A9riques&mtm_campaign=siteconum",
             target: "_blank",
-            rel: "noreferrer",
+            rel: "noopener noreferrer",
           },
         },
         {

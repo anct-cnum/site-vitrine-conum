@@ -26,7 +26,11 @@ export default function PiedDePage() {
           Conseiller Numérique rassemble les professionnels et les structures
           qui accompagnent les Français vers l'autonomie dans leurs usages du
           numérique au quotidien. Il est édité par l'
-          <a href="https://anct.gouv.fr/" target="_blank" rel="noreferrer">
+          <a
+            href="https://anct.gouv.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Agence nationale de la cohésion des territoires.
             <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
           </a>
