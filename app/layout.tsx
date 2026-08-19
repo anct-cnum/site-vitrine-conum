@@ -14,6 +14,7 @@ import PiedDePage from "@/components/organisms/PiedDePage/PiedDePage";
 export const metadata: Metadata = {
   title: "Conseiller numérique",
   description: "Site vitrine Conseiller numérique 2026",
+  metadataBase: new URL("https://conseiller-numerique.gouv.fr/"),
 };
 
 const lang = "fr";

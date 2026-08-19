@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Kit de communication — Label Conseiller Numérique",
   description:
     "Téléchargez la charte graphique, les logos et les supports officiels du Label Conseiller Numérique.",
+  alternates: {
+    canonical: "/kit-communication",
+  },
   openGraph: {
     title: "Kit de communication — Label Conseiller Numérique",
     description:
