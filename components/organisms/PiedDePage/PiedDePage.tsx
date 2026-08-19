@@ -1,6 +1,5 @@
 import { Footer } from "@codegouvfr/react-dsfr/Footer";
 import { headerFooterDisplayItem } from "@codegouvfr/react-dsfr/Display";
-import { FooterConsentManagementItem } from "@/utils/gestionConsentement";
 
 export default function PiedDePage() {
   const STATUT_ACCESSIBILITE = "non compliant" as const;
@@ -50,7 +49,6 @@ export default function PiedDePage() {
           text: "Données personnelles",
           linkProps: { href: "/donnees-personnelles" },
         },
-        <FooterConsentManagementItem />,
         {
           text: "Plan du site",
           linkProps: { href: "/plan-du-site" },

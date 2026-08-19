@@ -10,7 +10,6 @@ import {
 } from "./dsfr-bootstrap/server-only-index";
 import EnTete from "@/components/organisms/EnTete/EnTete";
 import PiedDePage from "@/components/organisms/PiedDePage/PiedDePage";
-import { ConsentBannerAndConsentManagement } from "@/utils/gestionConsentement";
 
 export const metadata: Metadata = {
   title: "Conseiller numérique",
@@ -28,7 +27,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <DsfrProvider lang={lang}>
-          <ConsentBannerAndConsentManagement />
           <EnTete />
           {children}
           <PiedDePage />
