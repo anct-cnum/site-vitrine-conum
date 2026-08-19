@@ -3,6 +3,8 @@
 }
 
 .conteneur {
+  max-width: 90rem;
+  margin-inline: auto;
   padding: 0 16.5rem;
 
   @media (max-width: 47.99em) {
