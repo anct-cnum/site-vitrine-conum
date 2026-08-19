@@ -3,21 +3,21 @@
   padding-top: 3rem;
   padding-bottom: 4rem;
   background-color: var(--background-alt-brown-caramel);
-  background-image:
-    url("/images/hero/hero-decor-gauche.svg"),
-    url("/images/hero/hero-decor-droite.svg");
-  background-repeat: no-repeat, no-repeat;
-  background-position:
-    left center,
-    right center;
-  background-size: auto;
 
   @media (max-width: 47.99em) {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    background-image: url("/images/hero/hero-decor-mobile.svg");
-    background-position: center top;
-    background-size: 100% auto;
+  }
+
+  @media (min-width: 1280px) {
+    background-image:
+      url("/images/hero/hero-decor-gauche.svg"),
+      url("/images/hero/hero-decor-droite.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left center,
+      right center;
+    background-size: auto;
   }
 }
 
@@ -68,11 +68,11 @@
 }
 
 .illustrationMobile {
-  display: none;
+  display: block;
   width: 100%;
   height: auto;
 
-  @media (max-width: 47.99em) {
-    display: block;
+  @media (min-width: 1280px) {
+    display: none;
   }
 }
