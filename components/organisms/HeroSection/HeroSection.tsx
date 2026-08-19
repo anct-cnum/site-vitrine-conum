@@ -7,7 +7,7 @@ type HeroSectionProps = {
   image: { src: string; alt: string };
   titre: string;
   texte?: string;
-  cta?: { label: string; href: string };
+  cta?: { label: string; href: string; externe?: boolean };
   position?: "image-titre" | "titre-image";
 };
 
@@ -24,7 +24,7 @@ export default function HeroSection({
   );
 
   const titreElement = (
-    <h1 id={id} className={`titre-h1 ${fr.cx("fr-mb-0")}`}>
+    <h1 id={id} className={`titre-h1 ${styles.titre} ${fr.cx("fr-mb-0")}`}>
       {titre}
     </h1>
   );
@@ -51,14 +51,20 @@ export default function HeroSection({
           {cta && (
             <Button
               priority="primary"
-              linkProps={{
-                href: cta.href,
-                target: "_blank",
-                rel: "noopener noreferrer",
-              }}
+              linkProps={
+                cta.externe === false
+                  ? { href: cta.href }
+                  : {
+                      href: cta.href,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    }
+              }
             >
               {cta.label}
-              <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
+              {cta.externe !== false && (
+                <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
+              )}
             </Button>
           )}
         </div>

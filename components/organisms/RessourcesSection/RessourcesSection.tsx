@@ -46,7 +46,6 @@ export default function RessourcesSection() {
                   >
                     Découvrir
                     <span className="fr-sr-only">
-                      {" "}
                       (ouvre une nouvelle fenêtre)
                     </span>
                   </a>

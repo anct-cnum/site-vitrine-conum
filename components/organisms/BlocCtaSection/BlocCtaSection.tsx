@@ -12,6 +12,7 @@ type BlocCtaSectionProps = {
   position?: "gauche" | "droite";
   couleurFond?: string;
   imgTailleFixe?: boolean;
+  ctaExterne?: boolean;
 };
 
 export default function BlocCtaSection({
@@ -24,6 +25,7 @@ export default function BlocCtaSection({
   position = "droite",
   couleurFond,
   imgTailleFixe = false,
+  ctaExterne = true,
 }: BlocCtaSectionProps) {
   return (
     <section
@@ -50,17 +52,20 @@ export default function BlocCtaSection({
             ))}
             <div>
               <Button
-                linkProps={{
-                  href: ctaHref,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                }}
+                linkProps={
+                  ctaExterne
+                    ? {
+                        href: ctaHref,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      }
+                    : { href: ctaHref }
+                }
               >
                 {ctaLabel}
-                <span className="fr-sr-only">
-                  {" "}
-                  (ouvre une nouvelle fenêtre)
-                </span>
+                {ctaExterne && (
+                  <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
+                )}
               </Button>
             </div>
           </div>

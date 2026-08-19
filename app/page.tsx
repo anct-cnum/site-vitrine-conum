@@ -58,6 +58,7 @@ export default function Home() {
         position="droite"
         couleurFond="--background-contrast-brown-opera"
         imgTailleFixe
+        ctaExterne={false}
       />
       <FaqSection />
       <RessourcesSection />
