@@ -1,4 +1,4 @@
-export type Document = {
+export type DocumentTelechargeable = {
   titre: string;
   texte: string;
   fichier?: {
@@ -8,7 +8,7 @@ export type Document = {
   };
 };
 
-export const DOCUMENTS: Document[] = [
+export const DOCUMENTS: DocumentTelechargeable[] = [
   {
     titre: "Orthographe",
     texte:

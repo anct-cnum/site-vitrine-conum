@@ -3,7 +3,7 @@ export type Avantage = {
   picto: string;
 };
 
-export const AVANTAGES_GROUPE_1: Avantage[] = [
+export const AVANTAGES_PARTICULIERS: Avantage[] = [
   {
     desc: "Prendre en main un ordinateur, un téléphone ou une tablette",
     picto: "/images/pictos/mediation-numerique.svg",
@@ -38,7 +38,7 @@ export const AVANTAGES_GROUPE_1: Avantage[] = [
   },
 ];
 
-export const AVANTAGES_GROUPE_2: Avantage[] = [
+export const AVANTAGES_PME_ASSOCIATIONS: Avantage[] = [
   {
     desc: "Comprendre et utiliser l’intelligence artificielle",
     picto: "/images/pictos/etoiles.svg",

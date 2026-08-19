@@ -2,8 +2,8 @@ import { fr } from "@codegouvfr/react-dsfr";
 import CarteAccompagnement from "@/components/molecules/CarteAccompagnement/CarteAccompagnement";
 import styles from "./AccompagnementsSection.module.scss";
 import {
-  AVANTAGES_GROUPE_1,
-  AVANTAGES_GROUPE_2,
+  AVANTAGES_PARTICULIERS,
+  AVANTAGES_PME_ASSOCIATIONS,
 } from "./AccompagnementsSection.data";
 
 const ID_TITRE = "accompagnement-titre";
@@ -30,7 +30,7 @@ export default function AccompagnementsSection() {
           Pour les particuliers
         </h3>
         <div className={`${styles.grille} ${fr.cx("fr-grid-row")}`}>
-          {AVANTAGES_GROUPE_1.map((avantage) => (
+          {AVANTAGES_PARTICULIERS.map((avantage) => (
             <div key={avantage.desc} className={styles.colonne}>
               <CarteAccompagnement
                 desc={avantage.desc}
@@ -46,7 +46,7 @@ export default function AccompagnementsSection() {
           Pour PME et associations
         </h3>
         <div className={`${styles.grille} ${fr.cx("fr-grid-row")}`}>
-          {AVANTAGES_GROUPE_2.map((avantage) => (
+          {AVANTAGES_PME_ASSOCIATIONS.map((avantage) => (
             <div key={avantage.desc} className={styles.colonne}>
               <CarteAccompagnement
                 desc={avantage.desc}

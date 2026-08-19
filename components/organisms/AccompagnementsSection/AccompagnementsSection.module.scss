@@ -1,14 +1,12 @@
+@use "../../../styles/mixins" as *;
+
 .section {
   padding-top: 4rem;
   padding-bottom: 5rem;
 }
 
 .conteneur {
-  padding: 0 9rem;
-
-  @media (max-width: 47.99em) {
-    padding: 0 1.5rem;
-  }
+  @include conteneur-standard;
 }
 
 .titre {
@@ -22,6 +20,7 @@
 
 .sousTitre {
   @media (max-width: 47.99em) {
+    // override fr-mt-6w / fr-mb-4w (même spécificité)
     margin-top: 2.5rem !important;
     margin-bottom: 1.5rem !important;
   }

@@ -1,3 +1,5 @@
+@use "../../../styles/mixins" as *;
+
 .section {
   background-color: var(--background-flat-blue-france);
   padding-top: 4rem;
@@ -5,11 +7,7 @@
 }
 
 .conteneur {
-  padding: 0 9rem;
-
-  @media (max-width: 47.99em) {
-    padding: 0 1.5rem;
-  }
+  @include conteneur-standard;
 }
 
 .titre,
@@ -25,6 +23,7 @@
 
 .texteIntro {
   @media (max-width: 47.99em) {
+    // override la classe utilitaire fr-text--sm (même spécificité)
     font-size: 1rem !important;
   }
 }

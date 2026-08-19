@@ -28,6 +28,7 @@
 
 .description {
   @media (max-width: 47.99em) {
+    // override la classe utilitaire fr-text--sm (même spécificité)
     margin-bottom: 1rem !important;
   }
 }
@@ -46,6 +47,7 @@
   color: var(--text-title-grey);
 
   @media (max-width: 47.99em) {
+    // override la classe utilitaire fr-h4 (même spécificité)
     font-size: 1.5rem !important;
   }
 }

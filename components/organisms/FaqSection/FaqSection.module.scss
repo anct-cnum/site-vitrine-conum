@@ -1,13 +1,11 @@
+@use "../../../styles/mixins" as *;
+
 .section {
   padding: 4rem 0;
 }
 
 .conteneur {
-  padding: 0 9rem;
-
-  @media (max-width: 47.99em) {
-    padding: 0 1.5rem;
-  }
+  @include conteneur-standard;
 }
 
 .titre {
@@ -16,6 +14,7 @@
 
   @media (max-width: 47.99em) {
     text-align: center;
+    // override fr-mb-6w (même spécificité, la cascade seule ne suffit pas)
     margin-bottom: 1.5rem !important;
   }
 }

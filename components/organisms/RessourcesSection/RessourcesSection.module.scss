@@ -1,14 +1,12 @@
+@use "../../../styles/mixins" as *;
+
 .section {
   background-color: var(--background-contrast-brown-opera);
   padding: 3.5rem 0 5rem;
 }
 
 .conteneur {
-  padding: 0 9rem;
-
-  @media (max-width: 47.99em) {
-    padding: 0 1rem;
-  }
+  @include conteneur-standard(1rem);
 }
 
 .grille {
@@ -83,6 +81,7 @@
   color: var(--text-default-grey);
   font-size: 1.125rem;
 
+  // le DSFR ajoute un ::before non désiré sur .fr-tile__title, avec sa propre priorité
   &::before {
     display: none !important;
   }

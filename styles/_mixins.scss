@@ -1,0 +1,7 @@
+@mixin conteneur-standard($padding-mobile: 1.5rem) {
+  padding: 0 9rem;
+
+  @media (max-width: 47.99em) {
+    padding: 0 $padding-mobile;
+  }
+}

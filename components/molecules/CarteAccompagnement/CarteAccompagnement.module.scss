@@ -20,6 +20,7 @@
 
 .description {
   @media (max-width: 47.99em) {
+    // override la classe utilitaire fr-text--sm (même spécificité)
     font-size: 0.75rem !important;
     line-height: 1.25rem !important;
   }
