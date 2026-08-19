@@ -10,9 +10,12 @@ const ID_TITRE = "accompagnement-titre";
 
 export default function AccompagnementsSection() {
   return (
-    <section aria-labelledby={ID_TITRE} className={styles.section}>
+    <section
+      aria-labelledby={ID_TITRE}
+      className={`section-mobile ${styles.section}`}
+    >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
-        <h2 id={ID_TITRE} className={styles.titre}>
+        <h2 id={ID_TITRE} className={`titre-h2 ${styles.titre}`}>
           En me formant auprès d'un conseiller numérique, je deviens autonome
         </h2>
         <p className={`${styles.intro} ${fr.cx("fr-text--lg")}`}>

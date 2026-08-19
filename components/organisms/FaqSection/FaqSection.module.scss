@@ -1,9 +1,5 @@
 .section {
   padding: 4rem 0;
-
-  @media (max-width: 47.99em) {
-    padding: 2.5rem 0;
-  }
 }
 
 .conteneur {
@@ -17,13 +13,9 @@
 .titre {
   max-width: 47.5rem;
   margin-inline: auto;
-  color: var(--blue-france-sun-113-625);
-  font-size: 2.25rem;
-  font-weight: 700;
 
   @media (max-width: 47.99em) {
     text-align: center;
-    font-size: 1.5rem;
     margin-bottom: 1.5rem !important;
   }
 }

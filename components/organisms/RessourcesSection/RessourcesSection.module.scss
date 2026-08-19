@@ -1,10 +1,6 @@
 .section {
   background-color: var(--background-contrast-brown-opera);
   padding: 3.5rem 0 5rem;
-
-  @media (max-width: 47.99em) {
-    padding: 2.5rem 0;
-  }
 }
 
 .conteneur {
@@ -36,27 +32,15 @@
 }
 
 .titre {
-  color: var(--blue-france-sun-113-625);
-  font-size: 2.25rem;
-  font-weight: 700;
   text-align: center;
   margin: 0 0 1rem;
-
-  @media (max-width: 47.99em) {
-    font-size: 1.5rem;
-  }
 }
 
 .texte {
   color: var(--text-title-grey);
-  font-size: 1.125rem;
   max-width: 40rem;
   margin: 0 auto 3.5rem;
   text-align: center;
-
-  @media (max-width: 47.99em) {
-    font-size: 1rem;
-  }
 }
 
 .tile {

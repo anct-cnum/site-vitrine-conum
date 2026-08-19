@@ -1,0 +1,43 @@
+.titre-h1 {
+  color: var(--text-title-blue-france);
+  font-size: 3rem;
+}
+
+@media (max-width: 47.99em) {
+  .titre-h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.titre-h2 {
+  color: var(--text-title-blue-france);
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 47.99em) {
+  .titre-h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.texte-body {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 47.99em) {
+  .texte-body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 47.99em) {
+  .section-mobile {
+    padding: 2.5rem 0;
+  }
+}
+
+.bordure-carte {
+  border: 1px solid var(--border-default-grey);
+}

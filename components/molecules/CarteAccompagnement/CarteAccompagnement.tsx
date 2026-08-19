@@ -11,7 +11,7 @@ export default function CarteAccompagnement({
   picto,
 }: CarteAccompagnementProps) {
   return (
-    <div className={styles.carte}>
+    <div className={`bordure-carte ${styles.carte}`}>
       <img src={picto} alt="" aria-hidden="true" className={styles.picto} />
       <p className={`${styles.description} ${fr.cx("fr-text--sm", "fr-mb-0")}`}>
         {desc}

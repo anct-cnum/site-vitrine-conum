@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/nextjs-vite'
 
 import "@codegouvfr/react-dsfr/main.css";
+import "../app/globals.css";
 import { startReactDsfr } from "@codegouvfr/react-dsfr/spa";
 
 startReactDsfr({ defaultColorScheme: "light" });

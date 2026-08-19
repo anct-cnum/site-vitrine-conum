@@ -7,7 +7,10 @@ const ID_TITRE = "ressources-reseau-titre";
 
 export default function RessourcesSection() {
   return (
-    <section aria-labelledby={ID_TITRE} className={styles.section}>
+    <section
+      aria-labelledby={ID_TITRE}
+      className={`section-mobile ${styles.section}`}
+    >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
         <img
           src="/images/ressources-illustration.svg"
@@ -15,10 +18,10 @@ export default function RessourcesSection() {
           aria-hidden="true"
           className={styles.illustration}
         />
-        <h2 id={ID_TITRE} className={styles.titre}>
+        <h2 id={ID_TITRE} className={`titre-h2 ${styles.titre}`}>
           Ressources du réseau
         </h2>
-        <p className={styles.texte}>
+        <p className={`texte-body ${styles.texte}`}>
           Les outils et ressources accessibles aux conseillers numériques et aux
           structures labellisées.
         </p>

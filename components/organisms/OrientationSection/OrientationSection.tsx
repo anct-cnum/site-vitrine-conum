@@ -6,9 +6,12 @@ const ID_TITRE = "orientation-titre";
 
 export default function OrientationSection() {
   return (
-    <section aria-labelledby={ID_TITRE} className={styles.section}>
+    <section
+      aria-labelledby={ID_TITRE}
+      className={`section-mobile ${styles.section}`}
+    >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
-        <h2 id={ID_TITRE} className={styles.titre}>
+        <h2 id={ID_TITRE} className={`titre-h2 ${styles.titre}`}>
           Conseiller numérique ou conseiller France services ?
         </h2>
         <p className={`${styles.texteIntro} ${fr.cx("fr-text--sm")}`}>

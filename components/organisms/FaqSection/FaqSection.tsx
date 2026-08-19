@@ -7,9 +7,15 @@ const ID_TITRE = "faq-titre";
 
 export default function FaqSection() {
   return (
-    <section aria-labelledby={ID_TITRE} className={styles.section}>
+    <section
+      aria-labelledby={ID_TITRE}
+      className={`section-mobile ${styles.section}`}
+    >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
-        <h2 id={ID_TITRE} className={`${styles.titre} ${fr.cx("fr-mb-6w")}`}>
+        <h2
+          id={ID_TITRE}
+          className={`titre-h2 ${styles.titre} ${fr.cx("fr-mb-6w")}`}
+        >
           Questions fréquentes
         </h2>
         <div className={`${styles.groupe} ${fr.cx("fr-accordions-group")}`}>

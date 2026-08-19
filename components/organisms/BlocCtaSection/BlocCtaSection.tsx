@@ -28,7 +28,7 @@ export default function BlocCtaSection({
   return (
     <section
       aria-labelledby={id}
-      className={styles.section}
+      className={`section-mobile ${styles.section}`}
       style={
         couleurFond ? { backgroundColor: `var(${couleurFond})` } : undefined
       }
@@ -40,11 +40,11 @@ export default function BlocCtaSection({
           <div
             className={`${styles.colonneContenu} ${fr.cx("fr-col-12", "fr-col-md-5")}`}
           >
-            <h2 id={id} className={styles.titre}>
+            <h2 id={id} className={`titre-h2 ${styles.titre}`}>
               {titre}
             </h2>
             {description.map((paragraphe) => (
-              <p key={paragraphe} className={styles.texte}>
+              <p key={paragraphe} className={`texte-body ${styles.texte}`}>
                 {paragraphe}
               </p>
             ))}

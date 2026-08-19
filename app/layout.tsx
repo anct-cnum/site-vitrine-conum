@@ -1,4 +1,5 @@
 import "@codegouvfr/react-dsfr/main.css";
+import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 

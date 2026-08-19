@@ -24,9 +24,9 @@ export default function CarteOrientation({
   sansBordureLogo,
 }: CarteOrientationProps) {
   return (
-    <article className={styles.carte}>
+    <article className={`bordure-carte ${styles.carte}`}>
       <div
-        className={`${styles.logoCarre} ${sansBordureLogo ? styles.sansBordure : ""} ${fr.cx("fr-mb-4w")}`}
+        className={`bordure-carte ${styles.logoCarre} ${sansBordureLogo ? styles.sansBordure : ""} ${fr.cx("fr-mb-4w")}`}
       >
         <img src={logo} alt="" aria-hidden="true" className={styles.logo} />
       </div>
