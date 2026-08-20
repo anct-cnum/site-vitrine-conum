@@ -1,4 +1,19 @@
 import CarteTexte from "@/components/organisms/CarteTexte/CarteTexte";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions légales — Conseiller Numérique",
+  description: "Mentions légales du site Conseiller Numérique",
+  alternates: {
+    canonical: "/mentions-legales",
+  },
+  openGraph: {
+    title: "Mentions légales — Conseiller Numérique",
+    description: "Mentions légales du site Conseiller Numérique",
+    locale: "fr_FR",
+    type: "website",
+  },
+};
 
 export default function MentionsLegalesPage() {
   return (

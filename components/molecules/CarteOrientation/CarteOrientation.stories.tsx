@@ -22,7 +22,7 @@ export const Default: Story = {
       {
         question: "👉 Sur quel sujet ?",
         reponse:
-          "utiliser son smartphone, sa tablette, son ordinateur, protéger ses données personnelles, maitriser les réseaux sociaux, suivre la scolarité de ses enfants, etc.",
+          "Utiliser son smartphone, sa tablette, son ordinateur, protéger ses données personnelles, maitriser les réseaux sociaux, suivre la scolarité de ses enfants, etc.",
       },
       {
         question: "👉 Comment ?",

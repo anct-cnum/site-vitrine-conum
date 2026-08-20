@@ -15,7 +15,7 @@ export const ITEMS: EtapeProgramme[] = [
     icone: "/images/pictos/school.svg",
     titre: "La formation",
     texte:
-      "Bénéficiez d'une formation au sein d'un organise agréé proche de chez vous ou en distanciel.",
+      "Bénéficiez d'une formation au sein d'un organisme agréé proche de chez vous ou en distanciel.",
   },
   {
     icone: "/images/pictos/team.svg",

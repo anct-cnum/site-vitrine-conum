@@ -23,7 +23,7 @@ export default function OffresFormationSection() {
           <p
             className={`texte-body ${styles.texte} ${styles.colonneTexte} ${fr.cx("fr-mb-0")}`}
           >
-            L’offre de formation du dispositif Conseiller numérique se compose
+            L’offre de formation du dispositif Conseiller Numérique se compose
             de deux volets complémentaires : la formation initiale et la
             formation continue. Les inscriptions s’effectuent directement sur
             les sites internet des organismes de formation.
@@ -52,11 +52,11 @@ export default function OffresFormationSection() {
           <p
             className={`texte-body ${styles.texte} ${styles.colonneTexte} ${fr.cx("fr-mt-4v", "fr-mb-0")}`}
           >
-            Créé en 2019, le titre REMN constituait la base de la formation
-            des conseillers numériques dès le lancement du dispositif. La
-            formation initiale préparait à l’obtention du CCP1 du titre REMN,
-            et les conseillers pouvaient également suivre une formation
-            menant à l’obtention du titre complet.
+            Créé en 2019, le titre REMN constituait la base de la formation des
+            conseillers numériques dès le lancement du dispositif. La formation
+            initiale préparait à l’obtention du CCP1 du titre REMN, et les
+            conseillers pouvaient également suivre une formation menant à
+            l’obtention du titre complet.
           </p>
           <div className={styles.colonneTexte}>
             <Button

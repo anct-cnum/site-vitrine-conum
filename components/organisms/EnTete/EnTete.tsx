@@ -31,7 +31,7 @@ export default function EnTete() {
       operatorLogo={{
         orientation: "horizontal",
         imgUrl: "/images/logo-conseiller-numerique.svg",
-        alt: "Conseiller numérique",
+        alt: "",
       }}
       quickAccessItems={[
         <Button

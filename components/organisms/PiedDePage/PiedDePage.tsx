@@ -46,7 +46,12 @@ export default function PiedDePage() {
           linkProps: { href: "/mentions-legales" },
         },
         {
-          text: "Données personnelles",
+          text: (
+            <>
+              Données personnelles (PDF, 144 Ko)
+              <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
+            </>
+          ),
           linkProps: {
             href: "/documents/CGU-Données_personnellesConseiller_Numérique.pdf",
             target: "_blank",

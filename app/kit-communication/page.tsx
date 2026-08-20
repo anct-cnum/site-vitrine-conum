@@ -25,7 +25,7 @@ export default function KitCommunicationPage() {
         id="kit-communication-hero-titre"
         image={{ src: "/images/pictos/document.svg", alt: "" }}
         titre="Kit de communication"
-        texte="Vous déployez des actions dans le cadre du label Conseiller numérique ? Un kit a été spécialement conçu pour valoriser le dispositif sur vos différents canaux de communication."
+        texte="Vous déployez des actions dans le cadre du label Conseiller Numérique ? Un kit a été spécialement conçu pour valoriser le dispositif sur vos différents canaux de communication."
         position="image-titre"
       />
       <DocumentsSection />

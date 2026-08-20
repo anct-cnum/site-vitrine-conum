@@ -1,6 +1,21 @@
 import { fr } from "@codegouvfr/react-dsfr";
 import Breadcrumb from "@codegouvfr/react-dsfr/Breadcrumb";
 import CarteTexte from "@/components/organisms/CarteTexte/CarteTexte";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Plan du site — Conseiller Numérique",
+  description: "Plan du site Conseiller Numérique",
+  alternates: {
+    canonical: "/plan-du-site",
+  },
+  openGraph: {
+    title: "Plan du site — Conseiller Numérique",
+    description: "Plan du site Conseiller Numérique",
+    locale: "fr_FR",
+    type: "website",
+  },
+};
 
 export default function PlanDuSitePage() {
   return (

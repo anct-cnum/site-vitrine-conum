@@ -49,7 +49,8 @@ export default function RessourcesSection() {
                   >
                     Découvrir
                     <span className="fr-sr-only">
-                      (ouvre une nouvelle fenêtre)
+                      {" "}
+                      {ressource.titre} (ouvre une nouvelle fenêtre)
                     </span>
                   </a>
                 }

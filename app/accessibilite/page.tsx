@@ -1,6 +1,21 @@
 import CarteTexte from "@/components/organisms/CarteTexte/CarteTexte";
 import CallOut from "@codegouvfr/react-dsfr/CallOut";
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Déclaration d'acessibilité — Conseiller Numérique",
+  description: "Déclaration d'accessibilité du site Conseiller Numérique",
+  alternates: {
+    canonical: "/accessibilite",
+  },
+  openGraph: {
+    title: "Déclaration d'acessibilité — Conseiller Numérique",
+    description: "Déclaration d'accessibilité du site Conseiller Numérique",
+    locale: "fr_FR",
+    type: "website",
+  },
+};
 
 export default function AccessibilitePage() {
   return (
@@ -58,7 +73,7 @@ export default function AccessibilitePage() {
         <p>
           Cette déclaration d'accessibilité s'applique à{" "}
           <a
-            href="https://conseiller-numerique.gouv.fr/"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             className="fr-link"
