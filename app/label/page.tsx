@@ -43,7 +43,11 @@ export default function LabelPage() {
         id="dispositif-label-titre"
         titre="Le dispositif devient un label"
         description={[
-          "Depuis 2021, le plan France Relance a financé la formation et l'activité de près de 4 000 conseillers numériques partout en France. Cette première phase touche à sa fin.",
+          <strong key="intro">
+            Depuis 2021, le plan France Relance a financé la formation et
+            l'activité de près de 4 000 conseillers numériques partout en
+            France. Cette première phase touche à sa fin.
+          </strong>,
           "Pour capitaliser sur ces investissements et pérenniser la qualité du service proposé par les conseillers numériques, le dispositif devient un label porté par les structures. Il reprend la marque, les exigences et la promesse de service public du dispositif d'origine. Seul évolue le modèle de financement.",
           "Dans un premier temps, le label est proposé aux structures qui emploient ou ont employé un conseiller numérique dans le cadre du dispositif. Il s'ouvrira ensuite aux autres structures de médiation numérique qui remplissent les conditions.",
         ]}

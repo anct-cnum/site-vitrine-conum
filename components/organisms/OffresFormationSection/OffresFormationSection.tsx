@@ -59,8 +59,17 @@ export default function OffresFormationSection() {
             menant à l’obtention du titre complet.
           </p>
           <div className={styles.colonneTexte}>
-            <Button priority="secondary" className={fr.cx("fr-mt-4v")}>
+            <Button
+              priority="secondary"
+              className={fr.cx("fr-mt-4v")}
+              linkProps={{
+                href: "https://aide.conseiller-numerique.gouv.fr/fr/article/le-titre-mediateur-numerique-remplace-le-remn-ce-quil-faut-savoir-vloijd/",
+                target: "_blank",
+                rel: "noopener noreferrer",
+              }}
+            >
               En savoir plus
+              <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
             </Button>
           </div>
         </div>

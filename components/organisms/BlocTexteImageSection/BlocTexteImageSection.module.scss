@@ -88,4 +88,11 @@
     height: auto;
     padding: 0;
   }
+
+  @media (min-width: 90em) {
+    .img {
+      width: 130%;
+      align-self: flex-start;
+    }
+  }
 }

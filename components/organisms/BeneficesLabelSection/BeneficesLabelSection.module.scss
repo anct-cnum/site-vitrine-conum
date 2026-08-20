@@ -6,6 +6,11 @@
 
 .conteneur {
   @include conteneur-standard;
+
+  @media (min-width: 48em) {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
 }
 
 .carre {

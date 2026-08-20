@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { fr } from "@codegouvfr/react-dsfr";
 import { Button } from "@codegouvfr/react-dsfr/Button";
 import styles from "./BlocTexteImageSection.module.scss";
@@ -5,7 +6,7 @@ import styles from "./BlocTexteImageSection.module.scss";
 type BlocTexteImageSectionProps = {
   id: string;
   titre: string;
-  description: string[];
+  description: ReactNode[];
   ctaLabel?: string;
   ctaHref?: string;
   img: { src: string; alt: string };
@@ -54,9 +55,9 @@ export default function BlocTexteImageSection({
             >
               {titre}
             </h2>
-            {description.map((paragraphe) => (
+            {description.map((paragraphe, index) => (
               <p
-                key={paragraphe}
+                key={index}
                 className={`texte-body ${styles.texte} ${fr.cx("fr-text--regular")}`}
               >
                 {paragraphe}
