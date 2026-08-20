@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { fr } from "@codegouvfr/react-dsfr";
 import styles from "./CarteEtape.module.scss";
 
 type CarteEtapeProps = {
@@ -18,11 +19,14 @@ export default function CarteEtape({
     <div
       className={`${styles.carte} ${orientation === "verticale" ? styles.verticale : styles.horizontale}`}
     >
-      <span className={styles.numero} aria-hidden="true">
+      <span
+        className={`${styles.numero} ${fr.cx("fr-text--bold")}`}
+        aria-hidden="true"
+      >
         {numero}
       </span>
       <div>
-        <h3 className={styles.titre}>{titre}</h3>
+        <h3 className={`${styles.titre} ${fr.cx("fr-text--bold")}`}>{titre}</h3>
         <p className={styles.texte}>{texte}</p>
       </div>
     </div>

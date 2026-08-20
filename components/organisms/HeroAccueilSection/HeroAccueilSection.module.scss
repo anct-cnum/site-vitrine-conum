@@ -1,13 +1,6 @@
 .banniere {
   position: relative;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
   background-color: var(--background-alt-brown-caramel);
-
-  @media (max-width: 47.99em) {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
 
   @media (min-width: 80em) {
     background-image:
@@ -29,11 +22,9 @@
   margin-inline: auto;
   text-align: center;
   gap: 2.5rem;
-  padding: 0;
 
   @media (max-width: 47.99em) {
     gap: 1.25rem;
-    padding: 0 2rem;
   }
 }
 
@@ -47,7 +38,6 @@
 }
 
 .titre {
-  margin: 0;
   max-width: 45rem;
   font-weight: 700;
 
@@ -57,7 +47,6 @@
 }
 
 .accroche {
-  margin: 0;
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 2rem;

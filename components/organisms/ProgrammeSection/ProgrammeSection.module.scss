@@ -1,13 +1,5 @@
 @use "../../../styles/mixins" as *;
 
-.section {
-  padding: 4rem 0 5rem;
-
-  @media (max-width: 47.99em) {
-    padding: 2.5rem 0;
-  }
-}
-
 .conteneur {
   @include conteneur-standard;
 }

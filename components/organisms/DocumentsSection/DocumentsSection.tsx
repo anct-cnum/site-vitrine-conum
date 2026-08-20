@@ -15,11 +15,17 @@ export default function DocumentsSection() {
         <h2 id={ID_TITRE} className="titre-h2">
           Charte institutionnelle, identité visuelle
         </h2>
-        <ul className={styles.liste}>
+        <ul className={`${styles.liste} ${fr.cx("fr-p-0", "fr-m-0")}`}>
           {DOCUMENTS.map((document) => (
             <li key={document.titre} className={styles.document}>
-              <h3 className={styles.sousTitre}>{document.titre}</h3>
-              <p className={`texte-body ${styles.texte}`}>{document.texte}</p>
+              <h3
+                className={`${styles.sousTitre} ${fr.cx("fr-m-0", "fr-text--bold")}`}
+              >
+                {document.titre}
+              </h3>
+              <p className={`texte-body ${styles.texte} ${fr.cx("fr-m-0")}`}>
+                {document.texte}
+              </p>
               {document.fichier && (
                 <Download
                   label={document.fichier.label}

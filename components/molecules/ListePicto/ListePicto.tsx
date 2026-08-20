@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { fr } from "@codegouvfr/react-dsfr";
 import styles from "./ListePicto.module.scss";
 
 type Item = {
@@ -33,7 +34,9 @@ export default function ListePicto({ items, espacement }: ListePictoProps) {
             </span>
           )}
           <div>
-            <h3 className={styles.itemTitre}>{item.titre}</h3>
+            <h3 className={`${styles.itemTitre} ${fr.cx("fr-text--bold")}`}>
+              {item.titre}
+            </h3>
             <p className={styles.itemTexte}>{item.texte}</p>
           </div>
         </li>

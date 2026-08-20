@@ -2,11 +2,6 @@
 
 .section {
   background-color: var(--background-contrast-brown-opera);
-  padding: 3.5rem 0 5rem;
-
-  @media (max-width: 47.99em) {
-    padding: 2.5rem 0;
-  }
 }
 
 .conteneur {
@@ -15,7 +10,7 @@
 }
 
 .icone {
-  margin: 0 auto 1rem;
+  margin: 0 auto;
 }
 
 .liste {

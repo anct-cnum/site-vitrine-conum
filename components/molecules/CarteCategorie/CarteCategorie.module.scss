@@ -6,7 +6,6 @@
   background-color: var(--background-default-grey);
   --text-title-blue-france: var(--blue-france-sun-113-625);
   --text-default-grey: var(--grey-200-850);
-  padding: 2rem;
 
   @media (max-width: 47.99em) {
     flex-direction: column;
@@ -27,12 +26,9 @@
 .titre {
   color: var(--text-title-blue-france);
   font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0;
 }
 
 .texte {
   color: var(--text-default-grey);
   font-size: 1rem;
-  margin: 0;
 }

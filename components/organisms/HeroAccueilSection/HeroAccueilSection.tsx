@@ -9,8 +9,13 @@ const ID_TITRE = "hero-accueil-titre";
 
 export default function HeroAccueilSection() {
   return (
-    <section aria-labelledby={ID_TITRE} className={styles.banniere}>
-      <div className={`${styles.contenu} ${fr.cx("fr-container")}`}>
+    <section
+      aria-labelledby={ID_TITRE}
+      className={`${styles.banniere} ${fr.cx("fr-pt-5w", "fr-pb-5w", "fr-pt-md-6w", "fr-pb-md-8w")}`}
+    >
+      <div
+        className={`${styles.contenu} ${fr.cx("fr-container", "fr-px-4w", "fr-px-md-0")}`}
+      >
         <Image
           src={logoDispositif}
           alt="Conseillers numériques France Services"
@@ -18,10 +23,13 @@ export default function HeroAccueilSection() {
           priority
           height={128}
         />
-        <h1 id={ID_TITRE} className={`titre-h1 ${styles.titre}`}>
+        <h1
+          id={ID_TITRE}
+          className={`titre-h1 ${styles.titre} ${fr.cx("fr-m-0")}`}
+        >
           Les conseillers numériques m'accompagnent vers l'autonomie numérique
         </h1>
-        <p className={styles.accroche}>
+        <p className={`${styles.accroche} ${fr.cx("fr-m-0")}`}>
           Les conseillers numériques accompagnent chaque jour les Français
           pour gagner en autonomie dans leurs usages du numérique :{" "}
           <span className={fr.cx("fr-text--bold")}>

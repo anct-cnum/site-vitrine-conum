@@ -55,7 +55,10 @@ export default function BlocTexteImageSection({
               {titre}
             </h2>
             {description.map((paragraphe) => (
-              <p key={paragraphe} className={`texte-body ${styles.texte}`}>
+              <p
+                key={paragraphe}
+                className={`texte-body ${styles.texte} ${fr.cx("fr-text--regular")}`}
+              >
                 {paragraphe}
               </p>
             ))}

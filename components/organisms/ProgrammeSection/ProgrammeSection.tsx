@@ -7,7 +7,10 @@ const ID_TITRE = "programme-titre";
 
 export default function ProgrammeSection() {
   return (
-    <section aria-labelledby={ID_TITRE} className={styles.section}>
+    <section
+      aria-labelledby={ID_TITRE}
+      className={fr.cx("fr-pt-5w", "fr-pb-5w", "fr-pt-md-8w", "fr-pb-md-10w")}
+    >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
         <div
           className={`${styles.grille} ${fr.cx("fr-grid-row", "fr-grid-row--middle")}`}

@@ -2,11 +2,6 @@
 
 .section {
   background-color: var(--background-contrast-brown-opera);
-  padding: 4rem 0 5rem;
-
-  @media (max-width: 47.99em) {
-    padding: 2.5rem 0;
-  }
 }
 
 .conteneur {
@@ -21,6 +16,4 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 0;
-  margin: 0;
 }

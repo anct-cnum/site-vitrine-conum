@@ -10,14 +10,14 @@ export default function ObtentionLabelSection() {
   return (
     <section
       aria-labelledby={ID_TITRE}
-      className={`section-mobile ${styles.section}`}
+      className={`section-mobile ${styles.section} ${fr.cx("fr-pt-md-7w", "fr-pb-md-10w")}`}
     >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
         <img
           src="/images/logo-conseiller-numerique-2.svg"
           alt=""
           aria-hidden="true"
-          className={styles.icone}
+          className={`${styles.icone} ${fr.cx("fr-mb-4v")}`}
         />
         <h2 id={ID_TITRE} className={`titre-h2 ${fr.cx("fr-mb-7w")}`}>
           Comment obtenir le label en 5 minutes

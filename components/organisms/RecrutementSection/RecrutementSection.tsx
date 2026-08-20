@@ -8,7 +8,10 @@ const ID_TITRE = "recrutement-titre";
 
 export default function RecrutementSection() {
   return (
-    <section aria-labelledby={ID_TITRE} className={styles.section}>
+    <section
+      aria-labelledby={ID_TITRE}
+      className={`${styles.section} ${fr.cx("fr-pt-5w", "fr-pb-5w", "fr-pt-md-8w", "fr-pb-md-10w")}`}
+    >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
         <h2 id={ID_TITRE} className={`titre-h2 ${fr.cx("fr-mb-3w")}`}>
           Le recrutement en 5 étapes
@@ -18,7 +21,7 @@ export default function RecrutementSection() {
           votre profil en relation avec les structures d'accueil dont les
           besoins correspondent à vos attentes.
         </p>
-        <ol className={`${styles.liste} ${fr.cx("fr-raw-list")}`}>
+        <ol className={`${styles.liste} ${fr.cx("fr-raw-list", "fr-p-0", "fr-m-0")}`}>
           {ETAPES.map((etape, index) => (
             <li key={etape.titre}>
               <CarteEtape

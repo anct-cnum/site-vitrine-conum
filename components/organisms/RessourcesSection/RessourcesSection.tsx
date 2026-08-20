@@ -16,12 +16,15 @@ export default function RessourcesSection() {
           src="/images/ressources-illustration.svg"
           alt=""
           aria-hidden="true"
-          className={styles.illustration}
+          className={`${styles.illustration} ${fr.cx("fr-mb-8v")}`}
         />
-        <h2 id={ID_TITRE} className={`titre-h2 ${styles.titre}`}>
+        <h2
+          id={ID_TITRE}
+          className={`titre-h2 ${styles.titre} ${fr.cx("fr-mb-4v")}`}
+        >
           Ressources du réseau
         </h2>
-        <p className={`texte-body ${styles.texte}`}>
+        <p className={`texte-body ${styles.texte} ${fr.cx("fr-mb-14v")}`}>
           Les outils et ressources accessibles aux conseillers numériques et aux
           structures labellisées.
         </p>
