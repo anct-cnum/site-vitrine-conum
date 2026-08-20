@@ -1,0 +1,30 @@
+@use "../../../styles/mixins" as *;
+
+.conteneur {
+  @include conteneur-standard;
+}
+
+.contenu {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.texte {
+  color: var(--text-default-grey);
+  line-height: 1.75rem;
+}
+
+.colonneTexte {
+  max-width: 45rem;
+  margin-inline: auto;
+}
+
+.grilleVolets {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+
+  @media (max-width: 47.99em) {
+    flex-direction: column;
+  }
+}

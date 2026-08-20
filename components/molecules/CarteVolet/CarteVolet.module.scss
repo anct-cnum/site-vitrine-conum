@@ -1,0 +1,37 @@
+.carte {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.entete {
+  background-color: var(--couleur-fond);
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.contenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: var(--couleur-fond);
+  border-radius: 0 0 16px 16px;
+  flex: 1;
+  min-height: 16rem;
+  text-align: center;
+}
+
+.titre {
+  color: var(--text-title-grey);
+  font-size: 1.125rem;
+}
+
+.organismesTitre {
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.organismesListe {
+  list-style: none;
+}
