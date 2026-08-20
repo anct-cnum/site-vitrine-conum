@@ -9,14 +9,6 @@
   border-left: 1px solid var(--border-default-grey);
 }
 
-.fr-header__body .fr-container {
-  max-width: none;
-
-  @media (min-width: 48em) {
-    padding: 1rem 7.5rem;
-  }
-}
-
 @media (max-width: 61.9375em) {
   .fr-nav__link[aria-current]:not([aria-current="false"])::before {
     content: "";

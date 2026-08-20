@@ -1,0 +1,35 @@
+@use "../../../styles/mixins" as *;
+
+.section {
+  background-color: var(--background-action-high-blue-france);
+  --text-title-blue-france: var(--text-inverted-blue-france);
+  --text-default-grey: var(--text-inverted-grey);
+  padding: 4rem 0 5rem;
+
+  @media (max-width: 47.99em) {
+    padding: 2.5rem 0;
+  }
+}
+
+.conteneur {
+  @include conteneur-standard;
+}
+
+.contenu {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.texte {
+  color: var(--text-default-grey);
+}
+
+.grille {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 47.99em) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

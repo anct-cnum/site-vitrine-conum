@@ -1,0 +1,57 @@
+.section {
+  display: flex;
+
+  @media (min-width: 48em) {
+    height: 41rem;
+  }
+
+  @media (max-width: 47.99em) {
+    flex-direction: column;
+  }
+}
+
+.colonneImage {
+  flex: 1 1 0;
+
+  @media (max-width: 47.99em) {
+    flex: 0 0 auto;
+    order: 1;
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media (max-width: 47.99em) {
+    height: 16rem;
+  }
+}
+
+.colonneContenu {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 6.5rem;
+
+  @media (max-width: 47.99em) {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+.contenu {
+  width: 32rem;
+  --espacement-titre-texte: 0px;
+}
+
+.titre {
+  margin: 0 0 1rem;
+}
+
+.sousTitre {
+  color: var(--text-default-grey);
+  margin: 0 0 2rem;
+}

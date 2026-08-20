@@ -1,0 +1,23 @@
+@use "../../../styles/mixins" as *;
+
+.section {
+  border-top: 1px solid var(--border-default-grey);
+  padding: 4rem 0 5rem;
+
+  @media (max-width: 47.99em) {
+    padding: 2.5rem 0;
+  }
+}
+
+.conteneur {
+  @include conteneur-standard;
+}
+
+.carre {
+  border: 1px solid var(--border-default-grey);
+  padding: 2.5rem 3.5rem;
+
+  @media (max-width: 47.99em) {
+    --item-direction: column;
+  }
+}
