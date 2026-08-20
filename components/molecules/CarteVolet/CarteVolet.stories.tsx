@@ -16,6 +16,10 @@ export const Default: Story = {
     texte:
       "Une formation préparant à l’obtention du titre professionnel Médiateur numérique, dispensée par des organismes de formation partenaires du dispositif.",
     couleurFond: "--background-contrast-brown-opera",
+    organismesFormation: [
+      { nom: "La Fabrik", zone: "en France métropolitaine" },
+      { nom: "Francil’In", zone: "en outre-mer" },
+    ],
   },
   decorators: [
     (Story) => (
