@@ -1,5 +1,6 @@
 .carte {
   display: flex;
+  height: 100%;
   background-color: var(--background-default-grey);
   box-shadow: 0 2px 6px 0 rgba(0, 0, 18, 0.16);
   padding: 2rem;
@@ -15,6 +16,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  padding: 1.5rem 1.5rem 2rem;
 }
 
 .numero {
@@ -46,7 +48,10 @@
   margin: 0 0 0.5rem;
 
   .verticale & {
+    color: var(--text-default-grey);
     font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 0.625rem;
   }
 }
 
@@ -57,5 +62,7 @@
 
   .verticale & {
     font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
   }
 }

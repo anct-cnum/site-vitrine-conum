@@ -1,9 +1,10 @@
+import type { ReactNode } from "react";
 import styles from "./CarteEtape.module.scss";
 
 type CarteEtapeProps = {
   numero: number;
   titre: string;
-  texte: string;
+  texte: ReactNode;
   orientation?: "horizontale" | "verticale";
 };
 
