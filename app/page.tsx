@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import AccompagnementsSection from "@/components/organisms/AccompagnementsSection/AccompagnementsSection";
-import BlocCtaSection from "@/components/organisms/BlocCtaSection/BlocCtaSection";
+import BlocTexteImageSection from "@/components/organisms/BlocTexteImageSection/BlocTexteImageSection";
 import FaqSection from "@/components/organisms/FaqSection/FaqSection";
 import HeroAccueilSection from "@/components/organisms/HeroAccueilSection/HeroAccueilSection";
 import OrientationSection from "@/components/organisms/OrientationSection/OrientationSection";
@@ -28,7 +28,7 @@ export default function Home() {
       <HeroAccueilSection />
       <AccompagnementsSection />
       <OrientationSection />
-      <BlocCtaSection
+      <BlocTexteImageSection
         id="dispositif-devient-label-titre"
         titre="Le dispositif devient un label"
         description={[
@@ -43,7 +43,7 @@ export default function Home() {
         }}
         position="gauche"
       />
-      <BlocCtaSection
+      <BlocTexteImageSection
         id="devenir-conseiller-numérique-titre"
         titre="Vous souhaitez devenir conseiller numérique ?"
         description={[

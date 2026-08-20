@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import BlocCtaSection from "./BlocCtaSection";
+import BlocTexteImageSection from "./BlocTexteImageSection";
 
 const meta = {
-  title: "Organisms/BlocCtaSection",
-  component: BlocCtaSection,
-} satisfies Meta<typeof BlocCtaSection>;
+  title: "Organisms/BlocTexteImageSection",
+  component: BlocTexteImageSection,
+} satisfies Meta<typeof BlocTexteImageSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
