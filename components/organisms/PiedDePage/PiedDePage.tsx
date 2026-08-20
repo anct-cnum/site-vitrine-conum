@@ -47,7 +47,11 @@ export default function PiedDePage() {
         },
         {
           text: "Données personnelles",
-          linkProps: { href: "/donnees-personnelles" },
+          linkProps: {
+            href: "/documents/CGU-Données_personnellesConseiller_Numérique.pdf",
+            target: "_blank",
+            rel: "noopener noreferrer",
+          },
         },
         {
           text: "Plan du site",

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/formation",
   },
   openGraph: {
-    title: "Formation des conseillers numériques — Initiale et continue",
+    title: "Formation des Conseillers Numériques",
     description:
       "Découvrez l'offre de formation des conseillers numériques : formation initiale, formation continue, modalités d'inscription et organismes partenaires.",
     locale: "fr_FR",
