@@ -9,6 +9,7 @@ import {
   getHtmlAttributes,
 } from "./dsfr-bootstrap/server-only-index";
 import EnTete from "@/components/organisms/EnTete/EnTete";
+import Matomo from "./matomo";
 import PiedDePage from "@/components/organisms/PiedDePage/PiedDePage";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
           <PiedDePage />
         </DsfrProvider>
+        <Matomo />
       </body>
     </html>
   );

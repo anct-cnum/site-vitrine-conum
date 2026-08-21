@@ -1,6 +1,8 @@
 import CarteTexte from "@/components/organisms/CarteTexte/CarteTexte";
 import { Metadata } from "next";
 
+import MatomoOptOut from "./MatomoOptOut";
+
 export const metadata: Metadata = {
   title: "Mentions légales — Conseiller Numérique",
   description: "Mentions légales du site Conseiller Numérique",
@@ -72,6 +74,29 @@ export default function MentionsLegalesPage() {
             <div>67000 Strasbourg</div>
             <div>France</div>
           </address>
+        </section>
+
+        <section aria-labelledby="donnees-title" className="fr-mb-4w">
+          <h2 id="donnees-title" className="fr-h6">
+            Données personnelles et suivi d'audience
+          </h2>
+          <p>
+            Ce site utilise l'outil libre{" "}
+            <a
+              className="fr-link"
+              href="https://matomo.org/"
+              target="_blank"
+              rel="noopener external"
+            >
+              Matomo
+            </a>{" "}
+            pour mesurer son audience. Il est configuré sans cookie de suivi et
+            les données collectées sont anonymisées : elles ne permettent ni de
+            vous identifier, ni de suivre votre navigation sur d'autres sites.
+            Conformément aux recommandations de la CNIL, cette mesure
+            d'audience est exemptée de recueil de consentement.
+          </p>
+
         </section>
 
         <section aria-labelledby="accessibilite-title" className="fr-mb-4w">
