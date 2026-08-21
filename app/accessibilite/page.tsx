@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function AccessibilitePage() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <CarteTexte titleId="declaration-accessibilite-title">
         <h1 id="declaration-accessibilite-title" className="titre-h2">
           Déclaration d'accessibilité

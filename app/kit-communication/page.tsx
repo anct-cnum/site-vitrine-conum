@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function KitCommunicationPage() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <HeroSection
         id="kit-communication-hero-titre"
         image={{ src: "/images/pictos/document.svg", alt: "" }}

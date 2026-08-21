@@ -1,3 +1,9 @@
+/* A retirer lors de la mise en ligne de la page label */
+/* Cache tout ce qui concerne le label */
+.tmpLabelHidden {
+  display: none !important;
+}
+
 .titre-h1 {
   color: var(--text-title-blue-france);
   font-size: 3rem;

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <HeroAccueilSection />
       <AccompagnementsSection />
       <OrientationSection />
@@ -42,6 +42,7 @@ export default function Home() {
           alt: "",
         }}
         position="gauche"
+        className="tmpLabelHidden"
       />
       <BlocTexteImageSection
         id="devenir-conseiller-numérique-titre"

@@ -26,13 +26,13 @@ export const metadata: Metadata = {
 
 export default function LabelPage() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <HeroSection
         id="label-hero-titre"
         image={{ src: "/images/label-illustration-2.svg", alt: "" }}
         titre="Le label Conseiller Numérique"
         texte="Une reconnaissance nationale pour les structures qui emploient des médiateurs numériques accompagnant gratuitement les Français dans leurs usages numériques."
-        position="image-titre"
+        position="titre-image"
         cta={{
           label: "Demander le label conseiller numérique",
           href: "https://mon.inclusion-numerique.anct.gouv.fr/connexion-label",

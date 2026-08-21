@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function PlanDuSitePage() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <div className={fr.cx("fr-container")}>
         <Breadcrumb
           currentPageLabel="Plan du site"

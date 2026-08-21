@@ -9,7 +9,7 @@ export default function FaqSection() {
   return (
     <section
       aria-labelledby={ID_TITRE}
-      className={`section-mobile ${styles.section}`}
+      className={`section-mobile ${styles.section} tmpLabelHidden`}
     >
       <div className={`${styles.conteneur} ${fr.cx("fr-container")}`}>
         <h2

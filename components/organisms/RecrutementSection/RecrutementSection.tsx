@@ -4,7 +4,7 @@ import CarteEtape from "@/components/molecules/CarteEtape/CarteEtape";
 import styles from "./RecrutementSection.module.scss";
 import { ETAPES } from "./RecrutementSection.data";
 
-const ID_TITRE = "recrutement-titre";
+const ID_TITRE = "candidature-titre";
 
 export default function RecrutementSection() {
   return (
@@ -21,7 +21,9 @@ export default function RecrutementSection() {
           votre profil en relation avec les structures d'accueil dont les
           besoins correspondent à vos attentes.
         </p>
-        <ol className={`${styles.liste} ${fr.cx("fr-raw-list", "fr-p-0", "fr-m-0")}`}>
+        <ol
+          className={`${styles.liste} ${fr.cx("fr-raw-list", "fr-p-0", "fr-m-0")}`}
+        >
           {ETAPES.map((etape, index) => (
             <li key={etape.titre}>
               <CarteEtape

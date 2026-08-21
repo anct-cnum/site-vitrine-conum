@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function FormationPage() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <HeroSection
         id="label-hero-titre"
         image={{ src: "/images/formation-illustration.svg", alt: "" }}

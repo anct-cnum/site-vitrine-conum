@@ -11,6 +11,7 @@ import {
 import EnTete from "@/components/organisms/EnTete/EnTete";
 import Matomo from "./matomo";
 import PiedDePage from "@/components/organisms/PiedDePage/PiedDePage";
+import SkipLinks from "@/components/organisms/SkipLinks/SkipLinks";
 
 export const metadata: Metadata = {
   title: "Conseiller numérique",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <DsfrProvider lang={lang}>
+          <SkipLinks />
           <EnTete />
           {children}
           <PiedDePage />

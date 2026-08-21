@@ -14,7 +14,7 @@ export default function OrientationSection() {
         <h2 id={ID_TITRE} className={`titre-h2 ${styles.titre}`}>
           Conseiller numérique ou conseiller France services ?
         </h2>
-        <p className={`${styles.texteIntro} ${fr.cx("fr-text--sm")}`}>
+        <p className={`${styles.texteIntro}`}>
           Les deux métiers sont complémentaires. Voici comment les distinguer
           pour savoir vers qui vous tourner.
         </p>

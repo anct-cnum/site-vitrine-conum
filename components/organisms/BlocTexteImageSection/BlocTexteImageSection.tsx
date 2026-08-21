@@ -16,6 +16,7 @@ type BlocTexteImageSectionProps = {
   imageFlexible?: boolean;
   titreUneLigne?: boolean;
   ctaExterne?: boolean;
+  className?: string;
 };
 
 export default function BlocTexteImageSection({
@@ -31,13 +32,14 @@ export default function BlocTexteImageSection({
   imageFlexible = false,
   titreUneLigne = false,
   ctaExterne = true,
+  className,
 }: BlocTexteImageSectionProps) {
   const cta = ctaLabel && ctaHref ? { label: ctaLabel, href: ctaHref } : null;
 
   return (
     <section
       aria-labelledby={id}
-      className={`section-mobile ${styles.section}`}
+      className={`section-mobile ${styles.section} ${className ?? ""}`}
       style={
         couleurFond ? { backgroundColor: `var(${couleurFond})` } : undefined
       }
@@ -78,7 +80,10 @@ export default function BlocTexteImageSection({
                 >
                   {cta.label}
                   {ctaExterne && (
-                    <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
+                    <span className="fr-sr-only">
+                      {" "}
+                      (ouvre une nouvelle fenêtre)
+                    </span>
                   )}
                 </Button>
               </div>

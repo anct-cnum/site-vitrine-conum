@@ -48,7 +48,7 @@ export default function EnTete() {
         </Button>,
         <Button
           priority="primary"
-          className="header-btn-primary"
+          className="header-btn-primary, tmpLabelHidden"
           linkProps={{
             href: "https://mon.inclusion-numerique.anct.gouv.fr/connexion-label",
             target: "_blank",
@@ -69,6 +69,7 @@ export default function EnTete() {
           text: "Le label",
           linkProps: { href: "/label" },
           isActive: pathname === "/label",
+          className: "tmpLabelHidden", // Cacher tout ce qui concerne la page label et les informations liées au label
         },
         {
           text: "Devenir conseiller numérique",

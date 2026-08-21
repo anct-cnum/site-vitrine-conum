@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function DevenirConseillerPage() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <HeroSection
         id="devenir-conseiller-hero-titre"
         image={{ src: "/images/pictos/good-work.svg", alt: "" }}

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <main id="content">
+    <main id="content" tabIndex={-1}>
       <CarteTexte titleId="mentions-title">
         <h1 id="mentions-title" className="titre-h2">
           Mentions légales

@@ -29,6 +29,10 @@
   flex: 0 0 auto;
   width: 13.75rem;
   position: relative;
+
+  @media (max-width: 47.99em) {
+    width: 100%;
+  }
 }
 
 .trait {
