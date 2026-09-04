@@ -38,7 +38,7 @@ export default function RecrutementSection() {
           priority="primary"
           className={fr.cx("fr-mt-5w")}
           linkProps={{
-            href: "https://www.conseiller-numerique.gouv.fr/candidature-conseiller",
+            href: "https://candidature.conseiller-numerique.gouv.fr/candidature-conseiller",
             target: "_blank",
             rel: "noopener noreferrer",
           }}
