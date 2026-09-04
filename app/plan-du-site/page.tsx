@@ -53,6 +53,11 @@ export default function PlanDuSitePage() {
             <a href="/mentions-legales">Mentions légales</a>
           </li>
           <li>
+            <a href="/donnees-personnelles">
+              Utilisation des données personnelles dans le cadre du dispositif
+            </a>
+          </li>
+          <li>
             <a href="/accessibilite">Déclaration d'accessibilité</a>
           </li>
           <li>

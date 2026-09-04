@@ -46,6 +46,10 @@ export default function PiedDePage() {
           linkProps: { href: "/mentions-legales" },
         },
         {
+          text: "Utilisation des données personnelles dans le cadre du dispositif",
+          linkProps: { href: "/donnees-personnelles" },
+        },
+        {
           text: (
             <>
               Données personnelles (PDF, 144 Ko)
