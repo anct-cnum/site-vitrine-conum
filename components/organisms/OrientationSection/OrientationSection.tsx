@@ -29,16 +29,16 @@ export default function OrientationSection() {
               description="Pour vous rendre autonome et faire seul."
               questionsReponses={[
                 {
-                  question: "👉 Pour quoi faire ?",
+                  question: "Pour quoi faire ?",
                   reponse: "Apprendre à utiliser le numérique au quotidien.",
                 },
                 {
-                  question: "👉 Sur quel sujet ?",
+                  question: "Sur quel sujet ?",
                   reponse:
                     "Utiliser son smartphone, sa tablette, son ordinateur, protéger ses données personnelles, maitriser les réseaux sociaux, suivre la scolarité de ses enfants, etc.",
                 },
                 {
-                  question: "👉 Comment ?",
+                  question: "Comment ?",
                   reponse:
                     "En atelier collectif ou en accompagnement individuel.",
                 },
@@ -55,17 +55,17 @@ export default function OrientationSection() {
               description="Pour résoudre un besoin administratif immédiat."
               questionsReponses={[
                 {
-                  question: "👉 Pour quoi faire ?",
+                  question: "Pour quoi faire ?",
                   reponse:
                     "Être accompagné pour réaliser une démarche administrative en ligne",
                 },
                 {
-                  question: "👉 Sur quel sujet ?",
+                  question: "Sur quel sujet ?",
                   reponse:
                     "12 partenaires nationaux : impôts, CAF, France Travail, Assurance maladie, retraite, MSA, La Poste, Chèque énergie, France Rénov', France Titres, URSSAF, Point Justice.",
                 },
                 {
-                  question: "👉 Comment ?",
+                  question: "Comment ?",
                   reponse: "En aide ponctuelle et individuelle, sur place.",
                 },
               ]}

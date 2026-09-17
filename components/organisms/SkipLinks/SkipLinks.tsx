@@ -13,10 +13,13 @@ const skipLinksByPath = {
       label: "Accéder au menu",
       anchor: "#header-menu-modal-fr-header",
     },
-    {
-      label: "Accéder aux questions fréquentes",
-      anchor: "#faq-titre",
-    },
+    // À rétablir avec la mise en ligne du label : la FAQ est masquée
+    // (tmpLabelHidden) et un lien d'évitement vers une cible masquée
+    // est non fonctionnel (RGAA 12.7).
+    // {
+    //   label: "Accéder aux questions fréquentes",
+    //   anchor: "#faq-titre",
+    // },
     {
       label: "Accéder au pied de page",
       anchor: "#fr-footer",
