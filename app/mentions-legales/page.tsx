@@ -86,23 +86,23 @@ export default function MentionsLegalesPage() {
               className="fr-link"
               href="https://matomo.org/"
               target="_blank"
-              rel="noopener external"
+              rel="noopener noreferrer"
             >
               Matomo
+              <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
             </a>{" "}
             pour mesurer son audience. Il est configuré sans cookie de suivi et
             les données collectées sont anonymisées : elles ne permettent ni de
             vous identifier, ni de suivre votre navigation sur d'autres sites.
-            Conformément aux recommandations de la CNIL, cette mesure
-            d'audience est exemptée de recueil de consentement.
+            Conformément aux recommandations de la CNIL, cette mesure d'audience
+            est exemptée de recueil de consentement.
           </p>
-
         </section>
 
         <section aria-labelledby="accessibilite-title" className="fr-mb-4w">
-          <h3 className="fr-text--md fr-mt-3w" id="accessibilite-title">
+          <h2 id="accessibilite-title" className="fr-h6">
             Signaler un dysfonctionnement
-          </h3>
+          </h2>
           <p>
             Si vous rencontrez un défaut d'accessibilité vous empêchant
             d'accéder à un contenu ou une fonctionnalité du site, merci de nous

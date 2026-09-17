@@ -49,6 +49,7 @@ export default function CarteOrientation({
                 "fr-pb-1w",
               )}
             >
+              <span aria-hidden="true">👉 </span>
               {qr.question}
             </dt>
             <dd

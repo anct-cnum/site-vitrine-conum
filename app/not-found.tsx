@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <>
-      <main role="main" id="content">
+      <main id="content" tabIndex={-1}>
         <div className="fr-container">
           <div className="fr-my-6w fr-mb-md-10w fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-grid-row--center">
             <div className="fr-py-0 fr-col-12 fr-col-md-6">
@@ -28,8 +28,7 @@ export default function NotFound() {
                 disponible.
                 <br />
                 Dans ce cas, pour continuer votre visite vous pouvez consulter
-                notre page d’accueil, ou effectuer une recherche avec notre
-                moteur de recherche en haut de page.
+                notre page d’accueil.
                 <br />
                 Sinon contactez-nous pour que l’on puisse vous rediriger vers la
                 bonne information.
@@ -48,9 +47,12 @@ export default function NotFound() {
                     href="https://aide.conseiller-numerique.gouv.fr/fr/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="Contactez-nous - nouvelle fenêtre"
                   >
                     Contactez-nous
+                    <span className="fr-sr-only">
+                      {" "}
+                      (ouvre une nouvelle fenêtre)
+                    </span>
                   </a>
                 </li>
               </ul>

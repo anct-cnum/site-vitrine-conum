@@ -25,7 +25,7 @@ export default function EnTete() {
         <>
           CONSEILLER
           <br />
-          NUMERIQUE
+          NUMÉRIQUE
         </>
       }
       operatorLogo={{
@@ -48,7 +48,7 @@ export default function EnTete() {
         </Button>,
         <Button
           priority="primary"
-          className="header-btn-primary, tmpLabelHidden"
+          className="header-btn-primary tmpLabelHidden"
           linkProps={{
             href: "https://mon.inclusion-numerique.anct.gouv.fr/connexion-label",
             target: "_blank",

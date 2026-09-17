@@ -22,6 +22,7 @@ export default function RecrutementSection() {
           besoins correspondent à vos attentes.
         </p>
         <ol
+          role="list"
           className={`${styles.liste} ${fr.cx("fr-raw-list", "fr-p-0", "fr-m-0")}`}
         >
           {ETAPES.map((etape, index) => (

@@ -22,7 +22,7 @@ export default function ObtentionLabelSection() {
         <h2 id={ID_TITRE} className={`titre-h2 ${fr.cx("fr-mb-7w")}`}>
           Comment obtenir le label en 5 minutes
         </h2>
-        <ol className={`${styles.liste} ${fr.cx("fr-raw-list")}`}>
+        <ol role="list" className={`${styles.liste} ${fr.cx("fr-raw-list")}`}>
           {ETAPES.map((etape, index) => (
             <li key={etape.titre} className={styles.item}>
               <CarteEtape

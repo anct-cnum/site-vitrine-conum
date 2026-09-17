@@ -16,6 +16,7 @@ type ListePictoProps = {
 export default function ListePicto({ items, espacement }: ListePictoProps) {
   return (
     <ul
+      role="list"
       className={styles.liste}
       style={{ "--espacement-item": espacement } as CSSProperties}
     >

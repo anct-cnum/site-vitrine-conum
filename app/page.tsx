@@ -45,7 +45,7 @@ export default function Home() {
         className="tmpLabelHidden"
       />
       <BlocTexteImageSection
-        id="devenir-conseiller-numérique-titre"
+        id="devenir-conseiller-numerique-titre"
         titre="Vous souhaitez devenir conseiller numérique ?"
         description={[
           "Le conseiller numérique accompagne les Français dans leurs usages du numérique au quotidien. Le recrutement passe par des structures conventionnées (collectivités, associations, médiathèques, …)",

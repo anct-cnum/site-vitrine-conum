@@ -4,13 +4,13 @@ import Highlight from "@codegouvfr/react-dsfr/Highlight";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Déclaration d'acessibilité — Conseiller Numérique",
+  title: "Déclaration d'accessibilité — Conseiller Numérique",
   description: "Déclaration d'accessibilité du site Conseiller Numérique",
   alternates: {
     canonical: "/accessibilite",
   },
   openGraph: {
-    title: "Déclaration d'acessibilité — Conseiller Numérique",
+    title: "Déclaration d'accessibilité — Conseiller Numérique",
     description: "Déclaration d'accessibilité du site Conseiller Numérique",
     locale: "fr_FR",
     type: "website",
@@ -72,14 +72,8 @@ export default function AccessibilitePage() {
         </ul>
         <p>
           Cette déclaration d'accessibilité s'applique à{" "}
-          <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fr-link"
-          >
+          <a href="/" className="fr-link">
             https://conseiller-numerique.gouv.fr
-            <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
           </a>
           .
         </p>

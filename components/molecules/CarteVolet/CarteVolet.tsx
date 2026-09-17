@@ -44,6 +44,7 @@ export default function CarteVolet({
             Organismes de formation
           </p>
           <ul
+            role="list"
             className={`${styles.organismesListe} ${fr.cx("fr-m-0", "fr-p-0")}`}
           >
             {organismesFormation.map((organisme) => (
