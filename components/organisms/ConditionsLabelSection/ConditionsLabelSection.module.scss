@@ -2,7 +2,7 @@
   display: flex;
 
   @media (min-width: 48em) {
-    height: 41rem;
+    min-height: 41rem;
   }
 
   @media (max-width: 47.99em) {
@@ -38,7 +38,8 @@
 }
 
 .contenu {
-  width: 32rem;
+  width: 100%;
+  max-width: 32rem;
   --espacement-titre-texte: 0px;
 }
 
