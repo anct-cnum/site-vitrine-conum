@@ -28,7 +28,7 @@ export default function PlanDuSitePage() {
         />
       </div>
 
-      <CarteTexte titleId="plan-du-site-title" as="div">
+      <CarteTexte titleId="plan-du-site-title">
         <h1 id="plan-du-site-title" className="titre-h2">
           Plan du site
         </h1>
