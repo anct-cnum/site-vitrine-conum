@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function DonneesPersonnellesPage() {
   return (
-    <main id="content" tabIndex={-1}>
+    <main id="content" role="main" tabIndex={-1}>
       <CarteTexte titleId="donnees-personnelles-title">
         <h1 id="donnees-personnelles-title" className="titre-h2">
           Utilisation des données personnelles dans le cadre du dispositif
