@@ -33,6 +33,7 @@ export default function ProgrammeSection() {
             <img
               src="/images/devenir-conseiller-illustration.svg"
               alt=""
+              aria-hidden="true"
               className={styles.image}
             />
           </div>
