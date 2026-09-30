@@ -2,7 +2,7 @@
 
 Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
 
-**État global :** 8 PR fusionnées dans `main` (#4, #5, #7, #8, #10, #11, #13, #14 — #12 inclus dans #5) · 2 tickets sans code applicatif à corriger ici (#6, #9) · 2 tickets de relais hors périmètre (#15, #16).
+**État global :** 8 PR fusionnées dans `main` (#4, #5, #7, #8, #10, #11, #13, #14 — #12 inclus dans #5) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR) · 2 tickets de relais hors périmètre (#15, #16).
 
 Sommaire :
 - [#4 — Statut d'accessibilité en pied de page](#4--statut-daccessibilité-en-pied-de-page)
@@ -48,13 +48,13 @@ Rendu contrôlé dans le navigateur : 18 critères affichés, un seul H1 visible
 
 ## #6 — Schéma pluriannuel d'accessibilité
 
-**Ticket :** [#6](https://github.com/anct-cnum/site-vitrine-conum/issues/6) · **Pas de PR**
+**Ticket :** [#6](https://github.com/anct-cnum/site-vitrine-conum/issues/6) (fermé) · **Pas de PR nécessaire**
 
 ### Investigation
-Un lien "Schéma pluriannuel" existe déjà sur `/accessibilite`, mais il est identique à deux autres entrées ("Plan 2025", "Bilan 2024") — impossible de vérifier son contenu réel (application JS `docs.numerique.gouv.fr`, non lisible par simple requête HTTP).
+Un lien "Schéma pluriannuel" existe déjà sur `/accessibilite`, identique à deux autres entrées ("Plan 2025", "Bilan 2024") — contenu non vérifiable par requête HTTP simple (application JS `docs.numerique.gouv.fr`).
 
-### Pourquoi aucune PR
-Un schéma pluriannuel engage l'organisme sur 3 ans (budget, jalons, ressources) : contenu à produire par l'ANCT, pas un contenu à inventer côté code. Voir le commentaire détaillé sur le ticket.
+### Résolution
+Confirmé par l'équipe : le document lié est bien le **« Schéma pluriannuel d'accessibilité de l'incubateur des territoires 2025-2027 »**, valide et à jour (couvre l'ensemble des services de l'incubateur, dont Conseiller Numérique). Lien déjà correct sur le site, aucun correctif nécessaire. Ticket fermé.
 
 ---
 
