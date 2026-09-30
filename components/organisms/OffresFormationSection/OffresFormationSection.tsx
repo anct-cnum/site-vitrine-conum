@@ -69,6 +69,10 @@ export default function OffresFormationSection() {
               }}
             >
               En savoir plus
+              <span className="fr-sr-only">
+                {" "}
+                sur le remplacement du titre REMN par « Médiateur numérique »
+              </span>
               <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
             </Button>
           </div>
