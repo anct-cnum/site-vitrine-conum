@@ -2,6 +2,8 @@
 
 Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
 
+**État global :** 8 PR fusionnées dans `main` (#4, #5, #7, #8, #10, #11, #13, #14 — #12 inclus dans #5) · 2 tickets sans code applicatif à corriger ici (#6, #9) · 2 tickets de relais hors périmètre (#15, #16).
+
 Sommaire :
 - [#4 — Statut d'accessibilité en pied de page](#4--statut-daccessibilité-en-pied-de-page)
 - [#5 — Déclaration d'accessibilité officielle (+ #12)](#5--déclaration-daccessibilité-officielle--12)
@@ -18,7 +20,7 @@ Sommaire :
 
 ## #4 — Statut d'accessibilité en pied de page
 
-**Ticket :** [#4](https://github.com/anct-cnum/site-vitrine-conum/issues/4) · **PR :** [#19](https://github.com/anct-cnum/site-vitrine-conum/pull/19)
+**Ticket :** [#4](https://github.com/anct-cnum/site-vitrine-conum/issues/4) · **PR :** [#19](https://github.com/anct-cnum/site-vitrine-conum/pull/19) (fusionnée)
 
 ### Constat
 `PiedDePage.tsx` avait `STATUT_ACCESSIBILITE = "non compliant"` codé en dur.
@@ -30,7 +32,7 @@ Sommaire :
 
 ## #5 — Déclaration d'accessibilité officielle (+ #12)
 
-**Ticket :** [#5](https://github.com/anct-cnum/site-vitrine-conum/issues/5) et [#12](https://github.com/anct-cnum/site-vitrine-conum/issues/12) · **PR :** [#23](https://github.com/anct-cnum/site-vitrine-conum/pull/23)
+**Ticket :** [#5](https://github.com/anct-cnum/site-vitrine-conum/issues/5) et [#12](https://github.com/anct-cnum/site-vitrine-conum/issues/12) · **PR :** [#23](https://github.com/anct-cnum/site-vitrine-conum/pull/23) (fusionnée)
 
 ### Constat
 `/accessibilite` affichait un contenu placeholder ("non conforme", "Le site n'a encore pas été audité"). Le bloc "Amélioration et contact" listait l'e-mail/adresse en paragraphes distincts plutôt qu'en liste (RGAA 9.3, ticket #12).
@@ -88,7 +90,7 @@ Ce critère (10.12) concerne aussi un second exemple de l'audit sur la page **Ca
 
 ## #8 — Alternative HTML accessible aux CGU (RGAA 13.3)
 
-**Ticket :** [#8](https://github.com/anct-cnum/site-vitrine-conum/issues/8) · **PR :** [#25](https://github.com/anct-cnum/site-vitrine-conum/pull/25) · **Sévérité :** Bloquant
+**Ticket :** [#8](https://github.com/anct-cnum/site-vitrine-conum/issues/8) · **PR :** [#25](https://github.com/anct-cnum/site-vitrine-conum/pull/25) (fusionnée) · **Sévérité :** Bloquant
 
 ### Constat
 `public/documents/CGU-Données_personnellesConseiller_Numérique.pdf` (10 pages) n'est pas balisé (`pdfinfo` : `Tagged: no`), sans structure de lecture pour les technologies d'assistance.
@@ -115,7 +117,7 @@ Ce H1 vient du code interne de la librairie DSFR (`node_modules`), pas du code a
 
 ## #10 — Images décoratives + investigation Accueil (RGAA 1.2 / 8.9)
 
-**Ticket :** [#10](https://github.com/anct-cnum/site-vitrine-conum/issues/10) · **PR :** [#22](https://github.com/anct-cnum/site-vitrine-conum/pull/22)
+**Ticket :** [#10](https://github.com/anct-cnum/site-vitrine-conum/issues/10) · **PR :** [#22](https://github.com/anct-cnum/site-vitrine-conum/pull/22) (fusionnée — ticket #10 laissé ouvert, vérification lecteur d'écran recommandée)
 
 ### Constat
 Plusieurs images décoratives (`alt=""`) sans `aria-hidden="true"` : `HeroSection`, `ConditionsLabelSection`, `FormationInitialeSection`, `ProgrammeSection`, et surtout `BlocTexteImageSection` — utilisé deux fois sur l'Accueil, identifié comme la cause la plus probable du signalement RGAA sur cette page (l'audit ne fournissait pas de capture précise).
@@ -130,7 +132,7 @@ Relecture du rapport d'audit (section 2.5.2) : le composant DSFR `Tile` (utilis�
 
 ## #11 — Lien explicite Formation (RGAA 6.1)
 
-**Ticket :** [#11](https://github.com/anct-cnum/site-vitrine-conum/issues/11) · **PR :** [#21](https://github.com/anct-cnum/site-vitrine-conum/pull/21)
+**Ticket :** [#11](https://github.com/anct-cnum/site-vitrine-conum/issues/11) · **PR :** [#21](https://github.com/anct-cnum/site-vitrine-conum/pull/21) (fusionnée)
 
 ### Constat
 Le lien "En savoir plus" (remplacement du titre REMN) ne permettait pas de comprendre sa destination hors contexte.
@@ -142,7 +144,7 @@ Ajout d'un texte `fr-sr-only` précisant la destination, sans changer le rendu v
 
 ## #13 — Cohérence structurelle Plan du site (RGAA 9.2)
 
-**Ticket :** [#13](https://github.com/anct-cnum/site-vitrine-conum/issues/13) · **PR :** [#24](https://github.com/anct-cnum/site-vitrine-conum/pull/24)
+**Ticket :** [#13](https://github.com/anct-cnum/site-vitrine-conum/issues/13) · **PR :** [#24](https://github.com/anct-cnum/site-vitrine-conum/pull/24) (fusionnée)
 
 ### Constat
 `CarteTexte` (composant partagé) est utilisé avec `as="article"` par défaut partout, sauf Plan du site qui forçait `as="div"` sans raison apparente, perdant le landmark `<article>`.
@@ -154,7 +156,7 @@ Retrait de l'override `as="div"`.
 
 ## #14 — Rôles ARIA landmarks (RGAA 12.6)
 
-**Ticket :** [#14](https://github.com/anct-cnum/site-vitrine-conum/issues/14) · **PR :** [#20](https://github.com/anct-cnum/site-vitrine-conum/pull/20)
+**Ticket :** [#14](https://github.com/anct-cnum/site-vitrine-conum/issues/14) · **PR :** [#20](https://github.com/anct-cnum/site-vitrine-conum/pull/20) (fusionnée)
 
 ### Investigation
 Les `<nav>` du DSFR (Header, SkipLinks, Breadcrumb) ont déjà `role="navigation"` nativement — rien à corriger côté navigation. Aucune balise `<main>` n'avait de `role="main"` explicite.
