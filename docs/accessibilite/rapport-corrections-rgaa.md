@@ -2,7 +2,9 @@
 
 Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
 
-**État global :** 8 PR fusionnées dans `main` (#4, #5, #7, #8, #10, #11, #13, #14 — #12 inclus dans #5) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR) · 2 tickets de relais hors périmètre (#15, #16).
+**État global :** 10 PR fusionnées ou en cours de fusion (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27 — #12 inclus dans #5) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · 2 tickets de relais hors périmètre (#15, #16).
+
+**Seconde passe d'audit (approfondie) :** une relecture indépendante du rapport complet (texte + captures d'écran) a été menée pour vérifier la couverture réelle des recommandations sur le code actuel. Elle a confirmé que tous les critères en périmètre étaient traités, à l'exception de 2 écarts ponctuels trouvés et corrigés (#26, #27) et d'un point d'amélioration facultatif (inclus dans #26). Voir la section [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit) en bas de document.
 
 Sommaire :
 - [#4 — Statut d'accessibilité en pied de page](#4--statut-daccessibilité-en-pied-de-page)
@@ -10,11 +12,14 @@ Sommaire :
 - [#6 — Schéma pluriannuel d'accessibilité](#6--schéma-pluriannuel-daccessibilité)
 - [#7 — Dimensions fixes ConditionsLabelSection (RGAA 10.12)](#7--dimensions-fixes-conditionslabelsection-rgaa-1012)
 - [#8 — Alternative HTML accessible aux CGU (RGAA 13.3)](#8--alternative-html-accessible-aux-cgu-rgaa-133)
-- [#9 — Hiérarchie des titres Formation (RGAA 9.1)](#9--hiérarchie-des-titres-formation-rgaa-91)
+- [#9 — Second H1 masqué DSFR (RGAA 9.1)](#9--hiérarchie-des-titres-formation-rgaa-91)
 - [#10 — Images décoratives + investigation Accueil (RGAA 1.2 / 8.9)](#10--images-décoratives--investigation-accueil-rgaa-12--89)
 - [#11 — Lien explicite Formation (RGAA 6.1)](#11--lien-explicite-formation-rgaa-61)
 - [#13 — Cohérence structurelle Plan du site (RGAA 9.2)](#13--cohérence-structurelle-plan-du-site-rgaa-92)
 - [#14 — Rôles ARIA landmarks (RGAA 12.6)](#14--rôles-aria-landmarks-rgaa-126)
+- [#26 — role="main" manquant sur /cgu (RGAA 12.6)](#26--role-main-manquant-sur-cgu-rgaa-126)
+- [#27 — Aria-label explicite du fil d'ariane (RGAA 9.2)](#27--aria-label-explicite-du-fil-dariane-rgaa-92)
+- [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit)
 
 ---
 
@@ -163,5 +168,51 @@ Les `<nav>` du DSFR (Header, SkipLinks, Breadcrumb) ont déjà `role="navigation
 
 ### Correctif
 Ajout de `role="main"` sur la balise `<main id="content">` des 10 pages du site.
+
+---
+
+## #26 — role="main" manquant sur /cgu (RGAA 12.6)
+
+**Ticket :** [#26](https://github.com/anct-cnum/site-vitrine-conum/issues/26) · **PR :** [#28](https://github.com/anct-cnum/site-vitrine-conum/pull/28)
+
+### Constat
+Trouvé lors de la seconde passe d'audit approfondie : `app/cgu/page.tsx` (créé par #8, fusionné **après** #14 qui avait ajouté `role="main"` aux 10 pages existant à ce moment-là) n'avait pas repris ce pattern — régression ponctuelle non détectée par les tickets initiaux.
+
+### Correctif
+- Ajout de `role="main"` sur `app/cgu/page.tsx`
+- Bonus à coût nul (même passe d'audit) : ajout d'une prop `ctaSrOnlyContext` sur `BlocTexteImageSection` pour renforcer le contexte du lien "En savoir plus" de l'Accueil — déjà conforme via le h2 précédent immédiat, mais fragile si du contenu venait s'intercaler entre le titre et le lien.
+
+---
+
+## #27 — Aria-label explicite du fil d'ariane (RGAA 9.2)
+
+**Ticket :** [#27](https://github.com/anct-cnum/site-vitrine-conum/issues/27) · **PR :** [#29](https://github.com/anct-cnum/site-vitrine-conum/pull/29)
+
+### Constat
+Trouvé lors de la seconde passe d'audit approfondie : c'est littéralement l'exemple illustrant le critère 9.2 dans le rapport source (page 21), jamais rapproché du code lors du ticket #13. Le composant DSFR `Breadcrumb` rend en dur `aria-label="vous êtes ici :"`.
+
+### Correctif
+Surcharge globale via l'API i18n du DSFR (`app/layout.tsx`) :
+```ts
+addBreadcrumbTranslations({
+  lang: "fr",
+  messages: { "navigation label": "Fil d'ariane" },
+});
+```
+Vérifié dans le navigateur : `aria-label="Fil d'ariane :"` sur `/plan-du-site`.
+
+---
+
+## Résultat de la seconde passe d'audit
+
+Une relecture indépendante et complète des 35 pages du rapport d'audit (texte **et** captures d'écran, y compris les recommandations données uniquement en image) a été menée pour vérifier, section par section, que le code actuel du site couvrait bien chaque recommandation en périmètre (hors formulaire de Candidature externe et hors PDF de charte graphique).
+
+**Constat global : tous les critères en périmètre sont couverts.** Seuls 2 écarts ponctuels ont été trouvés, tous deux introduits par des changements ultérieurs à leurs tickets d'origine (pages/composants créés ou modifiés après coup sans reprendre un pattern déjà établi ailleurs) — pas des oublis dans l'analyse initiale du rapport lui-même :
+- **#26** — `role="main"` manquant sur `/cgu` (page créée après le fix sitewide #14)
+- **#27** — `aria-label` du fil d'ariane non explicite (exemple de l'audit jamais rapproché du composant DSFR `Breadcrumb`)
+
+Plus un point d'amélioration facultatif (coût nul, inclus dans #26) et une clarification de portée sur #9 (le second H1 masqué du sélecteur de thème DSFR concerne toutes les pages, pas seulement Formation — même diagnostic et même limitation, juste un intitulé de ticket corrigé).
+
+Un balayage systématique de tous les liens/boutons non-explicites du site a également été fait à cette occasion (au-delà du seul critère 6.1 relevé par l'audit) : aucun lien réellement non-conforme trouvé au-delà de celui déjà corrigé par #11.
 
 ---
