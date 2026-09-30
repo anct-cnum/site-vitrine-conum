@@ -36,7 +36,7 @@ export default function RessourcesSection() {
             >
               <Tile
                 title={ressource.titre}
-                desc={ressource.description}
+                desc={<p>{ressource.description}</p>}
                 imageUrl={ressource.icone}
                 imageAlt=""
                 noBorder

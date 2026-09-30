@@ -20,7 +20,12 @@ export default function HeroSection({
   position = "image-titre",
 }: HeroSectionProps) {
   const imageElement = (
-    <img src={image.src} alt={image.alt} className={styles.image} />
+    <img
+      src={image.src}
+      alt={image.alt}
+      aria-hidden={image.alt === "" ? true : undefined}
+      className={styles.image}
+    />
   );
 
   const titreElement = (

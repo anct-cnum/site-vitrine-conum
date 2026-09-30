@@ -83,6 +83,7 @@ export default function FormationInitialeSection() {
             <img
               src="/images/formation-initiale-illustration.svg"
               alt=""
+              aria-hidden="true"
               className={styles.blocInscriptionImage}
             />
           </div>
