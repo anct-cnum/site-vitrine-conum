@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { addBreadcrumbTranslations } from "@codegouvfr/react-dsfr/Breadcrumb";
 import { DsfrProvider, StartDsfrOnHydration } from "./dsfr-bootstrap";
 import {
   DsfrHead,
@@ -12,6 +13,11 @@ import EnTete from "@/components/organisms/EnTete/EnTete";
 import Matomo from "./matomo";
 import PiedDePage from "@/components/organisms/PiedDePage/PiedDePage";
 import SkipLinks from "@/components/organisms/SkipLinks/SkipLinks";
+
+addBreadcrumbTranslations({
+  lang: "fr",
+  messages: { "navigation label": "Fil d'ariane" },
+});
 
 export const metadata: Metadata = {
   title: "Conseiller numérique",
