@@ -8,6 +8,7 @@ type BlocTexteImageSectionProps = {
   titre: string;
   description: ReactNode[];
   ctaLabel?: string;
+  ctaSrOnlyContext?: string;
   ctaHref?: string;
   img: { src: string; alt: string };
   position?: "gauche" | "droite";
@@ -24,6 +25,7 @@ export default function BlocTexteImageSection({
   titre,
   description,
   ctaLabel,
+  ctaSrOnlyContext,
   ctaHref,
   img,
   position = "droite",
@@ -79,6 +81,9 @@ export default function BlocTexteImageSection({
                   }
                 >
                   {cta.label}
+                  {ctaSrOnlyContext && (
+                    <span className="fr-sr-only"> {ctaSrOnlyContext}</span>
+                  )}
                   {ctaExterne && (
                     <span className="fr-sr-only">
                       {" "}
