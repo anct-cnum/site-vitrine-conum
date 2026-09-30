@@ -58,6 +58,11 @@ export default function PlanDuSitePage() {
             </a>
           </li>
           <li>
+            <a href="/cgu">
+              Conditions générales d’utilisation et données personnelles
+            </a>
+          </li>
+          <li>
             <a href="/accessibilite">Déclaration d'accessibilité</a>
           </li>
           <li>
