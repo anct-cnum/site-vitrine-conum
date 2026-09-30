@@ -2,7 +2,7 @@
 
 Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
 
-**État global :** 10 PR fusionnées ou en cours de fusion (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27 — #12 inclus dans #5) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · 2 tickets de relais hors périmètre (#15, #16).
+**État global :** 10 PR fusionnées (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27 — #12 inclus dans #5) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · 2 tickets de relais hors périmètre (#15, #16).
 
 **Seconde passe d'audit (approfondie) :** une relecture indépendante du rapport complet (texte + captures d'écran) a été menée pour vérifier la couverture réelle des recommandations sur le code actuel. Elle a confirmé que tous les critères en périmètre étaient traités, à l'exception de 2 écarts ponctuels trouvés et corrigés (#26, #27) et d'un point d'amélioration facultatif (inclus dans #26). Voir la section [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit) en bas de document.
 
@@ -173,7 +173,7 @@ Ajout de `role="main"` sur la balise `<main id="content">` des 10 pages du site.
 
 ## #26 — role="main" manquant sur /cgu (RGAA 12.6)
 
-**Ticket :** [#26](https://github.com/anct-cnum/site-vitrine-conum/issues/26) · **PR :** [#28](https://github.com/anct-cnum/site-vitrine-conum/pull/28)
+**Ticket :** [#26](https://github.com/anct-cnum/site-vitrine-conum/issues/26) (fermé) · **PR :** [#28](https://github.com/anct-cnum/site-vitrine-conum/pull/28) (fusionnée)
 
 ### Constat
 Trouvé lors de la seconde passe d'audit approfondie : `app/cgu/page.tsx` (créé par #8, fusionné **après** #14 qui avait ajouté `role="main"` aux 10 pages existant à ce moment-là) n'avait pas repris ce pattern — régression ponctuelle non détectée par les tickets initiaux.
@@ -186,7 +186,7 @@ Trouvé lors de la seconde passe d'audit approfondie : `app/cgu/page.tsx` (cré�
 
 ## #27 — Aria-label explicite du fil d'ariane (RGAA 9.2)
 
-**Ticket :** [#27](https://github.com/anct-cnum/site-vitrine-conum/issues/27) · **PR :** [#29](https://github.com/anct-cnum/site-vitrine-conum/pull/29)
+**Ticket :** [#27](https://github.com/anct-cnum/site-vitrine-conum/issues/27) (fermé) · **PR :** [#29](https://github.com/anct-cnum/site-vitrine-conum/pull/29) (fusionnée)
 
 ### Constat
 Trouvé lors de la seconde passe d'audit approfondie : c'est littéralement l'exemple illustrant le critère 9.2 dans le rapport source (page 21), jamais rapproché du code lors du ticket #13. Le composant DSFR `Breadcrumb` rend en dur `aria-label="vous êtes ici :"`.
