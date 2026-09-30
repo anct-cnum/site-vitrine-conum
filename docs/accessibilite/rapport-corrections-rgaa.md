@@ -120,6 +120,9 @@ Plusieurs images décoratives (`alt=""`) sans `aria-hidden="true"` : `HeroSectio
 ### Correctif
 Ajout de `aria-hidden="true"` (ou conditionnel `aria-hidden={alt === "" ? true : undefined}`) sur les 5 composants concernés.
 
+### Correctif complémentaire (8.9 — texte structuré uniquement par un `<div>`)
+Relecture du rapport d'audit (section 2.5.2) : le composant DSFR `Tile` (utilisé par `RessourcesSection`, 6 cartes sur l'Accueil) restitue sa prop `desc` dans un `<div class="fr-tile__desc">` sans balise `<p>`. Correctif : `desc={ressource.description}` → `desc={<p>{ressource.description}</p>}`. Vérifié dans le navigateur sur les 6 cartes.
+
 ---
 
 ## #11 — Lien explicite Formation (RGAA 6.1)
