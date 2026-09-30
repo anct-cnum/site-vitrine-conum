@@ -51,6 +51,7 @@ export default function Home() {
           "Le conseiller numérique accompagne les Français dans leurs usages du numérique au quotidien. Le recrutement passe par des structures conventionnées (collectivités, associations, médiathèques, …)",
         ]}
         ctaLabel="En savoir plus"
+        ctaSrOnlyContext="sur comment devenir conseiller numérique"
         ctaHref="/devenir-conseiller"
         img={{
           src: "/images/devenir-conseiller-illustration.svg",

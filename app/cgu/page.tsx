@@ -104,7 +104,7 @@ const SOUS_TRAITANTS = [
 
 export default function CguPage() {
   return (
-    <main id="content" tabIndex={-1}>
+    <main id="content" role="main" tabIndex={-1}>
       <CarteTexte titleId="cgu-title">
         <h1 id="cgu-title" className="titre-h2">
           Conditions générales d’utilisation et données personnelles
