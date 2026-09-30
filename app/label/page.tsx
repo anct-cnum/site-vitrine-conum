@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function LabelPage() {
   return (
-    <main id="content" tabIndex={-1}>
+    <main id="content" role="main" tabIndex={-1}>
       <HeroSection
         id="label-hero-titre"
         image={{ src: "/images/label-illustration-2.svg", alt: "" }}

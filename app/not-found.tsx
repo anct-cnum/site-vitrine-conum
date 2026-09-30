@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <>
-      <main id="content" tabIndex={-1}>
+      <main id="content" role="main" tabIndex={-1}>
         <div className="fr-container">
           <div className="fr-my-6w fr-mb-md-10w fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-grid-row--center">
             <div className="fr-py-0 fr-col-12 fr-col-md-6">
