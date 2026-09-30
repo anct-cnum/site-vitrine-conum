@@ -67,6 +67,9 @@ Un schéma pluriannuel engage l'organisme sur 3 ans (budget, jalons, ressources)
 - `height: 41rem` → `min-height: 41rem`
 - `width: 32rem` → `width: 100%; max-width: 32rem`
 
+### Périmètre
+Ce critère (10.12) concerne aussi un second exemple de l'audit sur la page **Candidature** (panneau récapitulatif "EN RÉSUMÉ"), hors périmètre de ce repo (sous-domaine externe). Signalé dans le ticket de relais [#15](https://github.com/anct-cnum/site-vitrine-conum/issues/15).
+
 ### Captures
 
 **Avant correctif (reconstitué), espacement de texte RGAA appliqué — bug reproduit :**
