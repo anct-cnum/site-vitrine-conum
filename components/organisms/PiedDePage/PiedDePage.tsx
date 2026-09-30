@@ -2,7 +2,7 @@ import { Footer } from "@codegouvfr/react-dsfr/Footer";
 import { headerFooterDisplayItem } from "@codegouvfr/react-dsfr/Display";
 
 export default function PiedDePage() {
-  const STATUT_ACCESSIBILITE = "non compliant" as const;
+  const STATUT_ACCESSIBILITE = "partially compliant" as const;
   return (
     <Footer
       brandTop={
