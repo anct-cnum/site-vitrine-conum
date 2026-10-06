@@ -47,7 +47,14 @@ export default function PlanDuSitePage() {
             <a href="/formation">Formation des conseillers numériques</a>
           </li>
           <li>
-            <a href="/kit-communication">Kit de communication</a>
+            <a
+              href="https://docs.numerique.gouv.fr/docs/a6aa5288-156a-4670-8387-43ec3fd1458d/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kit de communication
+              <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
+            </a>
           </li>
           <li>
             <a href="/mentions-legales">Mentions légales</a>
