@@ -90,25 +90,6 @@ const skipLinksByPath = {
       anchor: "#fr-footer",
     },
   ],
-  "/kit-communication": [
-    {
-      label: "Accéder au contenu",
-      anchor: "#content",
-    },
-    {
-      label: "Accéder au menu",
-      anchor: "#header-menu-modal-fr-header",
-    },
-    {
-      label: "Accéder aux téléchargements",
-      anchor: "#documents-titre",
-    },
-    {
-      label: "Accéder au pied de page",
-      anchor: "#fr-footer",
-    },
-  ],
-
   "/plan-du-site": [
     {
       label: "Accéder au contenu",
