@@ -110,19 +110,9 @@ export default function CguPage() {
           Conditions générales d’utilisation et données personnelles
         </h1>
         <p>
-          Version accessible du document{" "}
-          <a
-            className="fr-link"
-            href="/documents/CGU-Données_personnellesConseiller_Numérique.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            « Conditions générales d’utilisation et données personnelles »
-            au format PDF
-            <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
-          </a>
-          , applicable à la plateforme « Conseiller Numérique France
-          Services ». Dernière mise à jour : 27/06/2022.
+          Conditions générales d’utilisation et notice de traitement des
+          données personnelles applicables à la plateforme « Conseiller
+          Numérique France Services ». Dernière mise à jour : 27/06/2022.
         </p>
 
         <h2 className="titre-h2 fr-mt-4w">
