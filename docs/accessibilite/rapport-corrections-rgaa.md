@@ -2,7 +2,9 @@
 
 Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
 
-**État global :** 10 PR fusionnées sur site-vitrine-conum (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27 — #12 inclus dans #5) + 1 PR fusionnée sur le repo externe site-vitrine (#15, formulaire de candidature) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · #16 (PDF charte graphique) encore ouvert, relais vers l'équipe design.
+**État global :** 13 PR fusionnées sur site-vitrine-conum (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27, #30, #31 — #12 inclus dans #5) + 2 PR fusionnées sur le repo externe site-vitrine (#356, #357 — ticket #15) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · #16 (PDF charte graphique) encore ouvert, relais vers l'équipe design.
+
+**Synthèse :** sur les 18 critères non conformes relevés par l'audit, toutes les occurrences situées sur le site vitrine et sur le formulaire de candidature (repo externe) sont corrigées, plus 2 écarts non listés par l'audit trouvés lors d'une relecture approfondie (#26, #27). Il reste : les occurrences situées dans le **PDF de charte graphique** (1.1, 1.2, 3.2, 8.5, 8.9, 9.1 — asset design, hors code, relais #16 vers l'équipe design), une **limitation de la librairie DSFR** non actionnable côté code (#9), et le schéma pluriannuel (#6) dont le lien existant a été confirmé valide.
 
 **Seconde passe d'audit (approfondie) :** une relecture indépendante du rapport complet (texte + captures d'écran) a été menée pour vérifier la couverture réelle des recommandations sur le code actuel. Elle a confirmé que tous les critères en périmètre étaient traités, à l'exception de 2 écarts ponctuels trouvés et corrigés (#26, #27) et d'un point d'amélioration facultatif (inclus dans #26). Voir la section [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit) en bas de document.
 
@@ -20,6 +22,7 @@ Sommaire :
 - [#26 — role="main" manquant sur /cgu (RGAA 12.6)](#26--role-main-manquant-sur-cgu-rgaa-126)
 - [#27 — Aria-label explicite du fil d'ariane (RGAA 9.2)](#27--aria-label-explicite-du-fil-dariane-rgaa-92)
 - [#15 — Formulaire de candidature conseiller (repo externe site-vitrine)](#15--formulaire-de-candidature-conseiller-repo-externe-site-vitrine)
+- [#31 — Remplacement de la page Kit de communication (hors RGAA)](#31--remplacement-de-la-page-kit-de-communication-hors-rgaa-demande-connexe)
 - [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit)
 
 ---
@@ -106,6 +109,9 @@ Nouvelle page `/cgu` retranscrivant fidèlement l'intégralité du PDF (CGU de l
 
 ### Vérification
 Hiérarchie de titres testée dans le navigateur : h1→h2→h3→h4 cohérente sur les 26 titres de la page, aucun saut. 2 tableaux rendus correctement, aucune erreur console.
+
+### Complément — suppression du PDF (PR [#30](https://github.com/anct-cnum/site-vitrine-conum/pull/30), fusionnée)
+À la demande de l'équipe, le PDF original est supprimé (plus seulement secondaire) : `/cgu` devient l'unique version de référence. Retrait du fichier (`git rm`) et du lien "au format PDF" dans `app/cgu/page.tsx`. Aucune autre référence au fichier dans le repo.
 
 ---
 
@@ -223,10 +229,30 @@ Le formulaire de candidature conseiller (`/candidature-conseiller`) vit sur un r
 ### Vérification
 Lint OK, 84 tests passent (80 avant, nouveaux tests par correctif), parcours navigateur complet avec requête API interceptée (aucune candidature réellement envoyée), payload conforme au contrat.
 
-### Reste à faire (hors périmètre de cette PR)
-- Décision produit : un texte d'aide dupliqué par copier-coller fait désormais partie du nom accessible du champ date — à reformuler
+### Complément — reformulation du texte d'aide dupliqué (PR [#357](https://github.com/anct-cnum/site-vitrine/pull/357), fusionnée)
+Le texte d'aide sous la question "disponibilité" était un copier-coller de celui de la question "expérience" et faisait désormais partie du nom accessible du champ date. Remplacé par "Indiquez une date approximative si vous n'êtes pas encore certain(e)." — aide réelle plutôt que répétition. 84/84 tests toujours verts.
+
+### Reste à faire (hors périmètre)
 - Formulaires structure et coordinateur : partagent les mêmes composants donc héritent de 11.10/11.13/2.2, mais leurs problèmes propres (11.2/11.5/10.12) n'ont pas été vérifiés
 - Largeur fixe de 300px du widget Turnstile (imposée par Cloudflare), touche les bords à 320px — non actionnable
+
+---
+
+## #31 — Remplacement de la page Kit de communication (hors RGAA, demande connexe)
+
+**PR :** [#31](https://github.com/anct-cnum/site-vitrine-conum/pull/31) (fusionnée)
+
+### Contexte
+Demande connexe (pas un correctif RGAA) : le contenu du kit de communication est désormais maintenu sur `docs.numerique.gouv.fr`. La page interne `/kit-communication` est supprimée au profit d'un lien externe.
+
+### Changements
+- Suppression de `app/kit-communication/page.tsx` et du composant `DocumentsSection` (n'était utilisé que par cette page)
+- `EnTete.tsx` et `plan-du-site/page.tsx` : lien "Kit de communication" → `https://docs.numerique.gouv.fr/docs/a6aa5288-156a-4670-8387-43ec3fd1458d/` (nouvel onglet)
+- `SkipLinks.tsx` : retrait de l'entrée devenue obsolète
+- Les PDF/ZIP (`charte-graphique-conseiller-numerique.pdf`, logotypes, supports) restent sur le serveur — le document externe pointe directement vers ces mêmes fichiers
+
+### Vérification
+`pnpm build` : succès, route absente des pages générées. Testé en navigateur.
 
 ---
 
