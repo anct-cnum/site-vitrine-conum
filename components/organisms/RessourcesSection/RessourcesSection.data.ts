@@ -46,6 +46,6 @@ export const RESSOURCES: Ressource[] = [
     titre: "Mattermost",
     description:
       "L'espace d'échange du réseau : entraide entre pairs, questions terrain, annonces des coordinateurs et de l'ANCT.",
-    lien: "https://discussion.conseiller-numerique.gouv.fr/signup_user_complete",
+    lien: "https://discussion.coop-numerique.anct.gouv.fr/signup_user_complete",
   },
 ];
