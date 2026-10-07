@@ -2,9 +2,9 @@
 
 Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
 
-**État global :** 13 PR fusionnées sur site-vitrine-conum (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27, #30, #31 — #12 inclus dans #5) + 2 PR fusionnées sur le repo externe site-vitrine (#356, #357 — ticket #15) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · #16 (PDF charte graphique) encore ouvert, relais vers l'équipe design.
+**État global :** 13 PR fusionnées sur site-vitrine-conum (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27, #30, #31 — #12 inclus dans #5) + 2 PR fusionnées sur le repo externe site-vitrine (#356, #357 — ticket #15) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · #16 fermé — contenu et responsabilité transférés à docs.numerique.gouv.fr (voir #31).
 
-**Synthèse :** sur les 18 critères non conformes relevés par l'audit, toutes les occurrences situées sur le site vitrine et sur le formulaire de candidature (repo externe) sont corrigées, plus 2 écarts non listés par l'audit trouvés lors d'une relecture approfondie (#26, #27). Il reste : les occurrences situées dans le **PDF de charte graphique** (1.1, 1.2, 3.2, 8.5, 8.9, 9.1 — asset design, hors code, relais #16 vers l'équipe design), une **limitation de la librairie DSFR** non actionnable côté code (#9), et le schéma pluriannuel (#6) dont le lien existant a été confirmé valide.
+**Synthèse :** sur les 18 critères non conformes relevés par l'audit, toutes les occurrences situées sur le site vitrine et sur le formulaire de candidature (repo externe) sont corrigées, plus 2 écarts non listés par l'audit trouvés lors d'une relecture approfondie (#26, #27). Il reste : une **limitation de la librairie DSFR** non actionnable côté code (#9), et le schéma pluriannuel (#6) dont le lien existant a été confirmé valide. Les occurrences situées dans le **PDF de charte graphique** (1.1, 1.2, 3.2, 8.5, 8.9, 9.1) ne sont pas corrigées — le fichier PDF n'a pas changé — mais leur suivi ne relève plus de ce repo depuis que le contenu a été transféré vers une page `docs.numerique.gouv.fr` gérée par une autre équipe (#16 fermé sur cette base).
 
 **Seconde passe d'audit (approfondie) :** une relecture indépendante du rapport complet (texte + captures d'écran) a été menée pour vérifier la couverture réelle des recommandations sur le code actuel. Elle a confirmé que tous les critères en périmètre étaient traités, à l'exception de 2 écarts ponctuels trouvés et corrigés (#26, #27) et d'un point d'amélioration facultatif (inclus dans #26). Voir la section [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit) en bas de document.
 
@@ -253,6 +253,9 @@ Demande connexe (pas un correctif RGAA) : le contenu du kit de communication est
 
 ### Vérification
 `pnpm build` : succès, route absente des pages générées. Testé en navigateur.
+
+### Conséquence sur #16 (fermé)
+Le lien "Télécharger la charte graphique" sur la page Docs pointe vers le même fichier PDF que celui déjà hébergé ici (pas une version corrigée) — les défauts d'accessibilité du PDF (1.1, 3.2, 8.5, portions 1.2/8.9/9.1) restent présents tels quels. Mais le contenu étant désormais porté par cette page Docs externe, son suivi relève de l'équipe qui la gère plutôt que de ce repo. Ticket [#16](https://github.com/anct-cnum/site-vitrine-conum/issues/16) fermé sur cette base.
 
 ---
 
