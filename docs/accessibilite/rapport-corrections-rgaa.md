@@ -1,85 +1,82 @@
 # Rapport de corrections RGAA — Conseiller Numérique (site vitrine)
 
-Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
+Suivi des corrections apportées en réponse au **Rapport d'audit d'accessibilité RGAA 4.1** réalisé par Arya Access le 21/09/2026 (35 pages). Chaque section ci-dessous reprend un critère du rapport d'audit — numéro de critère, formulation officielle, niveau de non-conformité et référence de page — suivi du constat retenu et de la correction apportée.
 
-**État global :** 13 PR fusionnées sur site-vitrine-conum (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27, #30, #31 — #12 inclus dans #5) + 2 PR fusionnées sur le repo externe site-vitrine (#356, #357 — ticket #15) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · #16 fermé — contenu et responsabilité transférés à docs.numerique.gouv.fr (voir #31).
+**État global :** la quasi-totalité des non-conformités relevées par l'audit est corrigée, sur le site vitrine comme sur le formulaire de candidature (projet séparé) · le critère 1.6 (Obligations d'affichage, schéma pluriannuel) est satisfait sans correction nécessaire, le lien existant ayant été confirmé valide · un écart (9.1, p.18-20) n'est pas actionnable de notre côté, la cause étant un composant tiers fourni par le DSFR · les occurrences situées dans le PDF de charte graphique relèvent désormais d'une page externe, hors de notre périmètre.
 
-**Synthèse :** sur les 18 critères non conformes relevés par l'audit, toutes les occurrences situées sur le site vitrine et sur le formulaire de candidature (repo externe) sont corrigées, plus 2 écarts non listés par l'audit trouvés lors d'une relecture approfondie (#26, #27). Il reste : une **limitation de la librairie DSFR** non actionnable côté code (#9), et le schéma pluriannuel (#6) dont le lien existant a été confirmé valide. Les occurrences situées dans le **PDF de charte graphique** (1.1, 1.2, 3.2, 8.5, 8.9, 9.1) ne sont pas corrigées — le fichier PDF n'a pas changé — mais leur suivi ne relève plus de ce repo depuis que le contenu a été transféré vers une page `docs.numerique.gouv.fr` gérée par une autre équipe (#16 fermé sur cette base).
-
-**Seconde passe d'audit (approfondie) :** une relecture indépendante du rapport complet (texte + captures d'écran) a été menée pour vérifier la couverture réelle des recommandations sur le code actuel. Elle a confirmé que tous les critères en périmètre étaient traités, à l'exception de 2 écarts ponctuels trouvés et corrigés (#26, #27) et d'un point d'amélioration facultatif (inclus dans #26). Voir la section [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit) en bas de document.
+**Synthèse :** sur les 18 critères non conformes relevés par l'audit, toutes les occurrences situées sur le site vitrine et sur le formulaire de candidature sont corrigées, plus 2 écarts non listés par l'audit trouvés lors d'une relecture approfondie du rapport (voir en fin de document). Restent non corrigées les occurrences situées dans le PDF de charte graphique (critères 1.1, 1.2, 3.2, 8.5, 8.9, 9.1) — le fichier lui-même n'a pas été modifié — mais leur suivi ne relève plus de notre périmètre depuis que ce contenu a été transféré vers une page externe gérée par une autre équipe.
 
 Sommaire :
-- [#4 — Statut d'accessibilité en pied de page](#4--statut-daccessibilité-en-pied-de-page)
-- [#5 — Déclaration d'accessibilité officielle (+ #12)](#5--déclaration-daccessibilité-officielle--12)
-- [#6 — Schéma pluriannuel d'accessibilité](#6--schéma-pluriannuel-daccessibilité)
-- [#7 — Dimensions fixes ConditionsLabelSection (RGAA 10.12)](#7--dimensions-fixes-conditionslabelsection-rgaa-1012)
-- [#8 — Alternative HTML accessible aux CGU (RGAA 13.3)](#8--alternative-html-accessible-aux-cgu-rgaa-133)
-- [#9 — Second H1 masqué DSFR (RGAA 9.1)](#9--hiérarchie-des-titres-formation-rgaa-91)
-- [#10 — Images décoratives + investigation Accueil (RGAA 1.2 / 8.9)](#10--images-décoratives--investigation-accueil-rgaa-12--89)
-- [#11 — Lien explicite Formation (RGAA 6.1)](#11--lien-explicite-formation-rgaa-61)
-- [#13 — Cohérence structurelle Plan du site (RGAA 9.2)](#13--cohérence-structurelle-plan-du-site-rgaa-92)
-- [#14 — Rôles ARIA landmarks (RGAA 12.6)](#14--rôles-aria-landmarks-rgaa-126)
-- [#26 — role="main" manquant sur /cgu (RGAA 12.6)](#26--role-main-manquant-sur-cgu-rgaa-126)
-- [#27 — Aria-label explicite du fil d'ariane (RGAA 9.2)](#27--aria-label-explicite-du-fil-dariane-rgaa-92)
-- [#15 — Formulaire de candidature conseiller (repo externe site-vitrine)](#15--formulaire-de-candidature-conseiller-repo-externe-site-vitrine)
-- [#31 — Remplacement de la page Kit de communication (hors RGAA)](#31--remplacement-de-la-page-kit-de-communication-hors-rgaa-demande-connexe)
+- [#4 — Statut d'accessibilité en pied de page (obligations d'affichage)](#4--statut-daccessibilité-en-pied-de-page-obligations-daffichage)
+- [#5 — Déclaration d'accessibilité officielle (+ critère 9.3)](#5--déclaration-daccessibilité-officielle--critère-93)
+- [#6 — Schéma pluriannuel d'accessibilité (obligations d'affichage)](#6--schéma-pluriannuel-daccessibilité-obligations-daffichage)
+- [#7 — Critère 10.12 : espacement du texte, page Label](#7--critère-1012--espacement-du-texte-page-label)
+- [#8 — Critère 13.3 : document bureautique sans alternative](#8--critère-133--document-bureautique-sans-alternative)
+- [#9 — Critère 9.1 : second titre masqué (composant DSFR)](#9--critère-91--second-titre-masqué-composant-dsfr)
+- [#10 — Critères 1.2 et 8.9 : images et balisage, Accueil](#10--critères-12-et-89--images-et-balisage-accueil)
+- [#11 — Critère 6.1 : lien explicite, page Formation](#11--critère-61--lien-explicite-page-formation)
+- [#13 — Critère 9.2 : cohérence de structure, Plan du site](#13--critère-92--cohérence-de-structure-plan-du-site)
+- [#14 — Critère 12.6 : zones de regroupement, tout le site](#14--critère-126--zones-de-regroupement-tout-le-site)
+- [#26 — Critère 12.6 : zone de contenu principal manquante sur /cgu](#26--critère-126--zone-de-contenu-principal-manquante-sur-cgu)
+- [#27 — Critère 9.2 : intitulé du fil d'ariane](#27--critère-92--intitulé-du-fil-dariane)
+- [#15 — Critères 2.2, 10.12, 11.2, 11.5, 11.10, 11.11, 11.13 : formulaire de candidature](#15--critères-22-1012-112-115-1110-1111-1113--formulaire-de-candidature)
+- [Critères 1.1, 1.2, 3.2, 8.5, 8.9, 9.1 : PDF de charte graphique](#critères-11-12-32-85-89-91--pdf-de-charte-graphique)
 - [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit)
 
 ---
 
-## #4 — Statut d'accessibilité en pied de page
+## #4 — Statut d'accessibilité en pied de page (obligations d'affichage)
 
-**Ticket :** [#4](https://github.com/anct-cnum/site-vitrine-conum/issues/4) · **PR :** [#19](https://github.com/anct-cnum/site-vitrine-conum/pull/19) (fusionnée)
+**Rapport d'audit :** section 1.6 "Obligations d'affichage", p.6 — mention du niveau d'accessibilité en pied de page. **Ticket :** [#4](https://github.com/anct-cnum/site-vitrine-conum/issues/4) — Corrigé.
 
 ### Constat
-`PiedDePage.tsx` avait `STATUT_ACCESSIBILITE = "non compliant"` codé en dur.
+Le pied de page affichait un statut d'accessibilité codé en dur sur "non conforme", en contradiction avec l'obligation de mention conforme au modèle "Accessibilité : non conforme / partiellement conforme / totalement conforme" rappelée par l'auditeur.
 
 ### Correctif
-`"non compliant"` → `"partially compliant"` (le site est partiellement conforme suite à l'audit).
+Le statut affiché reflète maintenant la réalité : le site est partiellement conforme suite à l'audit.
 
 ---
 
-## #5 — Déclaration d'accessibilité officielle (+ #12)
+## #5 — Déclaration d'accessibilité officielle (+ critère 9.3)
 
-**Ticket :** [#5](https://github.com/anct-cnum/site-vitrine-conum/issues/5) et [#12](https://github.com/anct-cnum/site-vitrine-conum/issues/12) · **PR :** [#23](https://github.com/anct-cnum/site-vitrine-conum/pull/23) (fusionnée)
+**Rapport d'audit :** section 1.6 "Obligations d'affichage", p.6-7 (déclaration d'accessibilité) et **critère 9.3** — « Dans chaque page web, chaque liste est-elle correctement structurée ? » — Mineur, p.22 (page Accessibilité). **Tickets :** [#5](https://github.com/anct-cnum/site-vitrine-conum/issues/5) et [#12](https://github.com/anct-cnum/site-vitrine-conum/issues/12) — Corrigés.
 
 ### Constat
-`/accessibilite` affichait un contenu placeholder ("non conforme", "Le site n'a encore pas été audité"). Le bloc "Amélioration et contact" listait l'e-mail/adresse en paragraphes distincts plutôt qu'en liste (RGAA 9.3, ticket #12).
+La page `/accessibilite` affichait un contenu provisoire ("non conforme", "Le site n'a encore pas été audité") au lieu de la déclaration d'accessibilité requise. Le bloc "Amélioration et contact" de cette même page listait l'e-mail et l'adresse en paragraphes distincts plutôt qu'en liste, contrevenant au critère 9.3.
 
 ### Correctif
-- Publication de la déclaration officielle : 66,04 % des critères respectés (taux moyen 86,54 %), liste des 18 critères non conformes, environnement de test, technologies, outils, pages vérifiées.
-- Conversion du bloc contact en `<ul>/<li>`.
+- Publication de la déclaration officielle : 66,04 % des critères respectés (taux moyen 86,54 %), liste des 18 critères non conformes, environnement de test, technologies, outils, pages vérifiées — conforme au modèle attendu par le RGAA.
+- Conversion du bloc contact en liste correctement structurée.
 
 ### Vérification
-Rendu contrôlé dans le navigateur : 18 critères affichés, un seul H1 visible (le second H1, masqué, appartient au sélecteur de thème DSFR — voir #9), aucune erreur console.
+Rendu contrôlé dans le navigateur : 18 critères affichés, un seul titre de niveau 1 réellement visible (le second, masqué, appartient au sélecteur de thème du DSFR — voir #9), aucune erreur console.
 
 ---
 
-## #6 — Schéma pluriannuel d'accessibilité
+## #6 — Schéma pluriannuel d'accessibilité (obligations d'affichage)
 
-**Ticket :** [#6](https://github.com/anct-cnum/site-vitrine-conum/issues/6) (fermé) · **Pas de PR nécessaire**
+**Rapport d'audit :** section 1.6 "Obligations d'affichage", p.7 — schéma pluriannuel de mise en accessibilité. **Ticket :** [#6](https://github.com/anct-cnum/site-vitrine-conum/issues/6) — Fermé, aucune correction nécessaire.
 
 ### Investigation
-Un lien "Schéma pluriannuel" existe déjà sur `/accessibilite`, identique à deux autres entrées ("Plan 2025", "Bilan 2024") — contenu non vérifiable par requête HTTP simple (application JS `docs.numerique.gouv.fr`).
+Un lien "Schéma pluriannuel" existe déjà sur `/accessibilite`, identique à deux autres entrées ("Plan 2025", "Bilan 2024") — contenu non vérifiable par une simple requête technique (application externe `docs.numerique.gouv.fr`).
 
 ### Résolution
-Confirmé par l'équipe : le document lié est bien le **« Schéma pluriannuel d'accessibilité de l'incubateur des territoires 2025-2027 »**, valide et à jour (couvre l'ensemble des services de l'incubateur, dont Conseiller Numérique). Lien déjà correct sur le site, aucun correctif nécessaire. Ticket fermé.
+Confirmé par l'équipe : le document lié est bien le « Schéma pluriannuel d'accessibilité de l'incubateur des territoires 2025-2027 », valide et à jour (couvre l'ensemble des services de l'incubateur, dont Conseiller Numérique). L'obligation est donc satisfaite, aucun correctif nécessaire.
 
 ---
 
-## #7 — Dimensions fixes ConditionsLabelSection (RGAA 10.12)
+## #7 — Critère 10.12 : espacement du texte, page Label
 
-**Ticket :** [#7](https://github.com/anct-cnum/site-vitrine-conum/issues/7) · **PR :** [#17](https://github.com/anct-cnum/site-vitrine-conum/pull/17) (fusionnée) · **Sévérité :** Bloquant
+**Critère RGAA 10.12** — « Dans chaque page web, les propriétés d'espacement du texte peuvent-elles être redéfinies par l'utilisateur sans perte de contenu ou de fonctionnalité (hors cas particuliers) ? » — **Bloquant**, rapport p.22-24. **Ticket :** [#7](https://github.com/anct-cnum/site-vitrine-conum/issues/7) — Corrigé.
 
 ### Constat
-`ConditionsLabelSection.module.scss` utilisait `height: 41rem` (section) et `width: 32rem` (bloc texte) fixes. Avec les propriétés d'espacement de texte RGAA (line-height, letter-spacing, word-spacing) redéfinies par l'utilisateur, le contenu débordait de la boîte : titre tronqué, dernier item coupé.
+Conformément à l'exemple donné par l'auditeur (p.23) sur la section "Conditions du label", la section avait une hauteur et une largeur fixes. Avec les propriétés d'espacement de texte redéfinies par l'utilisateur (interligne, espacement des lettres/mots), le contenu débordait de la boîte : titre tronqué, dernier item coupé.
 
 ### Correctif
-- `height: 41rem` → `min-height: 41rem`
-- `width: 32rem` → `width: 100%; max-width: 32rem`
+Conformément à la recommandation de l'auditeur (« les propriétés CSS de hauteurs fixes, largeurs fixes sont à éviter », p.24), les dimensions fixes ont été remplacées par des dimensions minimales/maximales, qui s'adaptent si le texte a besoin de plus de place.
 
 ### Périmètre
-Ce critère (10.12) concerne aussi un second exemple de l'audit sur la page **Candidature** (panneau récapitulatif "EN RÉSUMÉ"), hors périmètre de ce repo (sous-domaine externe). Signalé dans le ticket de relais [#15](https://github.com/anct-cnum/site-vitrine-conum/issues/15).
+Le rapport d'audit (p.23-24) donne un second exemple de ce même critère sur la page Candidature (panneau récapitulatif "EN RÉSUMÉ"), qui ne fait pas partie du site vitrine. Signalé dans le ticket de relais [#15](https://github.com/anct-cnum/site-vitrine-conum/issues/15).
 
 ### Captures
 
@@ -97,178 +94,162 @@ Ce critère (10.12) concerne aussi un second exemple de l'audit sur la page **Ca
 
 ---
 
-## #8 — Alternative HTML accessible aux CGU (RGAA 13.3)
+## #8 — Critère 13.3 : document bureautique sans alternative
 
-**Ticket :** [#8](https://github.com/anct-cnum/site-vitrine-conum/issues/8) · **PR :** [#25](https://github.com/anct-cnum/site-vitrine-conum/pull/25) (fusionnée) · **Sévérité :** Bloquant
+**Critère RGAA 13.3** — « Dans chaque page web, chaque document bureautique en téléchargement possède-t-il, si nécessaire, une version accessible (hors cas particuliers) ? » — **Bloquant**, rapport p.33-34. **Ticket :** [#8](https://github.com/anct-cnum/site-vitrine-conum/issues/8) — Corrigé.
 
 ### Constat
-`public/documents/CGU-Données_personnellesConseiller_Numérique.pdf` (10 pages) n'est pas balisé (`pdfinfo` : `Tagged: no`), sans structure de lecture pour les technologies d'assistance.
+Le document "CGU & Données personnelles", cité par l'auditeur comme exemple de non-conformité (p.33), n'était disponible qu'en PDF, sans structure de lecture pour les technologies d'assistance.
 
 ### Correctif
-Nouvelle page `/cgu` retranscrivant fidèlement l'intégralité du PDF (CGU de la plateforme + notice de traitement des données personnelles) en HTML structuré : titres h1→h4 hiérarchisés, listes, 2 tableaux DSFR accessibles (durée de conservation, sous-traitants), liens explicites. Le PDF original reste disponible en téléchargement depuis cette page. Le lien en pied de page (auparavant direct vers le PDF) cible désormais `/cgu`.
+Conformément aux options de correction proposées par l'auditeur (« proposer une version alternative du document au format HTML compatible avec l'accessibilité », p.34), une nouvelle page `/cgu` retranscrit fidèlement l'intégralité du document (CGU de la plateforme + notice de traitement des données personnelles) en page web structurée : titres hiérarchisés, listes, tableaux accessibles (durée de conservation, sous-traitants), liens explicites.
 
 ### Vérification
-Hiérarchie de titres testée dans le navigateur : h1→h2→h3→h4 cohérente sur les 26 titres de la page, aucun saut. 2 tableaux rendus correctement, aucune erreur console.
+Hiérarchie des titres testée dans le navigateur : cohérente sur les 26 titres de la page, aucun saut. Tableaux rendus correctement, aucune erreur.
 
-### Complément — suppression du PDF (PR [#30](https://github.com/anct-cnum/site-vitrine-conum/pull/30), fusionnée)
-À la demande de l'équipe, le PDF original est supprimé (plus seulement secondaire) : `/cgu` devient l'unique version de référence. Retrait du fichier (`git rm`) et du lien "au format PDF" dans `app/cgu/page.tsx`. Aucune autre référence au fichier dans le repo.
+### Complément — suppression du PDF
+À la demande de l'équipe, le PDF original est supprimé plutôt que conservé en option secondaire : `/cgu` devient l'unique version de référence. Plus aucune référence au fichier sur le site.
 
 ---
 
-## #9 — Hiérarchie des titres Formation (RGAA 9.1)
+## #9 — Critère 9.1 : second titre masqué (composant DSFR)
 
-**Ticket :** [#9](https://github.com/anct-cnum/site-vitrine-conum/issues/9) · **Pas de PR**
+**Critère RGAA 9.1** — « Dans chaque page web, l'information est-elle structurée par l'utilisation appropriée de titres ? » — **Majeur**, rapport p.18-20 (page concernée indiquée par l'auditeur : Formation). **Ticket :** [#9](https://github.com/anct-cnum/site-vitrine-conum/issues/9) — Pas de correction de code possible.
 
 ### Investigation
-La hiérarchie des titres propres à la page `/formation` est correcte (h1→h2→h3, aucun saut). Un second `<h1>` ("Paramètres d'affichage") a été trouvé dans le DOM rendu — il appartient au sélecteur de thème du DSFR (`headerFooterDisplayItem`), présent sur toutes les pages du site, contenu dans une `<dialog>` native fermée (`visibility: hidden`). Les navigateurs excluent normalement un `<dialog>` fermé de l'arbre d'accessibilité ; un outil comme HeadingsMap (cité par l'auditeur) lit en revanche le DOM brut, ce qui explique probablement le signalement.
+La hiérarchie des titres propre à la page `/formation`, telle qu'illustrée par l'exemple de l'auditeur (p.19), est correcte : aucun saut constaté. Un second titre de niveau 1 ("Paramètres d'affichage") a en revanche été trouvé dans le code de la page — il appartient au sélecteur de thème clair/sombre du DSFR, un composant fourni par l'État et utilisé tel quel, présent sur toutes les pages du site, pas seulement Formation. Ce titre est masqué tant que la fenêtre de réglages n'est pas ouverte, et n'est normalement pas annoncé par les lecteurs d'écran ; un outil d'audit qui lit le code brut (type HeadingsMap, cité par l'auditeur parmi ses outils p.3) le détecte en revanche, ce qui explique probablement le signalement.
 
-### Pourquoi aucune PR
-Ce H1 vient du code interne de la librairie DSFR (`node_modules`), pas du code applicatif. Voir le commentaire détaillé sur le ticket pour la décision à prendre (accepter comme limitation connue vs. signaler au mainteneur DSFR).
+### Pourquoi aucune correction
+Ce titre fait partie du composant fourni par le DSFR, pas de notre code applicatif. Un commentaire détaillé a été laissé sur le ticket pour décider de la suite (accepter comme limitation connue, ou signaler au mainteneur du DSFR) — une confirmation de l'auditeur sur ce diagnostic serait utile avant de trancher.
 
 ---
 
-## #10 — Images décoratives + investigation Accueil (RGAA 1.2 / 8.9)
+## #10 — Critères 1.2 et 8.9 : images et balisage, Accueil
 
-**Ticket :** [#10](https://github.com/anct-cnum/site-vitrine-conum/issues/10) · **PR :** [#22](https://github.com/anct-cnum/site-vitrine-conum/pull/22) (fusionnée — ticket #10 laissé ouvert, vérification lecteur d'écran recommandée)
+**Critère RGAA 1.2** — « Chaque image de décoration est-elle correctement ignorée par les technologies d'assistance ? » — **Majeur**, rapport p.9-10. **Critère RGAA 8.9** — « Dans chaque page web, les balises ne doivent pas être utilisées uniquement à des fins de présentation. » — **Bloquant**, rapport p.17-18 (pages concernées indiquées par l'auditeur : Accueil, Formation). **Ticket :** [#10](https://github.com/anct-cnum/site-vitrine-conum/issues/10) — Corrigé (ticket laissé ouvert, une vérification au lecteur d'écran est recommandée).
 
 ### Constat
-Plusieurs images décoratives (`alt=""`) sans `aria-hidden="true"` : `HeroSection`, `ConditionsLabelSection`, `FormationInitialeSection`, `ProgrammeSection`, et surtout `BlocTexteImageSection` — utilisé deux fois sur l'Accueil, identifié comme la cause la plus probable du signalement RGAA sur cette page (l'audit ne fournissait pas de capture précise).
+Plusieurs images décoratives n'étaient pas explicitement ignorées par les technologies d'assistance, notamment un composant utilisé deux fois sur l'Accueil — identifié comme la cause la plus probable du signalement sur cette page, l'auditeur n'ayant pas fourni de capture précise pour l'Accueil.
 
 ### Correctif
-Ajout de `aria-hidden="true"` (ou conditionnel `aria-hidden={alt === "" ? true : undefined}`) sur les 5 composants concernés.
+Les images décoratives concernées sont maintenant correctement ignorées par les technologies d'assistance.
 
-### Correctif complémentaire (8.9 — texte structuré uniquement par un `<div>`)
-Relecture du rapport d'audit (section 2.5.2) : le composant DSFR `Tile` (utilisé par `RessourcesSection`, 6 cartes sur l'Accueil) restitue sa prop `desc` dans un `<div class="fr-tile__desc">` sans balise `<p>`. Correctif : `desc={ressource.description}` → `desc={<p>{ressource.description}</p>}`. Vérifié dans le navigateur sur les 6 cartes.
+### Correctif complémentaire — texte mal structuré (critère 8.9)
+En relisant le rapport d'audit plus en détail (recommandation p.18 : « si du texte est structuré uniquement avec des `<div>` ou `<span>`, modifier ce balisage par le balisage approprié »), un second problème a été trouvé : le texte des 6 cartes "Ressources" de l'Accueil n'était pas structuré avec la balise appropriée pour du texte (une balise de présentation générique était utilisée à la place). Corrigé et vérifié sur les 6 cartes.
 
 ---
 
-## #11 — Lien explicite Formation (RGAA 6.1)
+## #11 — Critère 6.1 : lien explicite, page Formation
 
-**Ticket :** [#11](https://github.com/anct-cnum/site-vitrine-conum/issues/11) · **PR :** [#21](https://github.com/anct-cnum/site-vitrine-conum/pull/21) (fusionnée)
+**Critère RGAA 6.1** — « Chaque lien est-il explicite (hors cas particuliers) ? » — **Mineur**, rapport p.13-15 (page concernée indiquée par l'auditeur : Formation). **Ticket :** [#11](https://github.com/anct-cnum/site-vitrine-conum/issues/11) — Corrigé.
 
 ### Constat
-Le lien "En savoir plus" (remplacement du titre REMN) ne permettait pas de comprendre sa destination hors contexte.
+Le lien "En savoir plus" (remplacement du titre REMN) ne permettait pas de comprendre sa destination hors contexte, conformément à l'exemple de l'auditeur (p.14).
 
 ### Correctif
-Ajout d'un texte `fr-sr-only` précisant la destination, sans changer le rendu visuel.
+Conformément à la technique recommandée par l'auditeur (classe `sr-only`, p.14-15), un texte additionnel, non visible mais lu par les lecteurs d'écran, précise maintenant la destination du lien, sans changer son apparence.
 
 ---
 
-## #13 — Cohérence structurelle Plan du site (RGAA 9.2)
+## #13 — Critère 9.2 : cohérence de structure, Plan du site
 
-**Ticket :** [#13](https://github.com/anct-cnum/site-vitrine-conum/issues/13) · **PR :** [#24](https://github.com/anct-cnum/site-vitrine-conum/pull/24) (fusionnée)
+**Critère RGAA 9.2** — « Dans chaque page web, la structure du document est-elle cohérente (hors cas particuliers) ? » — **Mineur**, rapport p.20-21 (pages concernées indiquées par l'auditeur : Candidature, Plan du site). **Ticket :** [#13](https://github.com/anct-cnum/site-vitrine-conum/issues/13) — Corrigé.
 
 ### Constat
-`CarteTexte` (composant partagé) est utilisé avec `as="article"` par défaut partout, sauf Plan du site qui forçait `as="div"` sans raison apparente, perdant le landmark `<article>`.
+Le composant partagé utilisé pour structurer les pages de contenu avait, sans raison apparente, une structure différente sur la page Plan du site par rapport aux autres pages similaires.
 
 ### Correctif
-Retrait de l'override `as="div"`.
+La page Plan du site utilise maintenant la même structure que les autres pages de contenu.
 
 ---
 
-## #14 — Rôles ARIA landmarks (RGAA 12.6)
+## #14 — Critère 12.6 : zones de regroupement, tout le site
 
-**Ticket :** [#14](https://github.com/anct-cnum/site-vitrine-conum/issues/14) · **PR :** [#20](https://github.com/anct-cnum/site-vitrine-conum/pull/20) (fusionnée)
+**Critère RGAA 12.6** — « Les zones de regroupement de contenus présentes dans plusieurs pages web (en-tête, navigation principale, contenu principal, pied de page, moteur de recherche) peuvent-elles être atteintes ou évitées ? » — **Mineur**, rapport p.31-32 (page concernée indiquée par l'auditeur : toutes les pages sauf le PDF de charte graphique). **Ticket :** [#14](https://github.com/anct-cnum/site-vitrine-conum/issues/14) — Corrigé.
 
 ### Investigation
-Les `<nav>` du DSFR (Header, SkipLinks, Breadcrumb) ont déjà `role="navigation"` nativement — rien à corriger côté navigation. Aucune balise `<main>` n'avait de `role="main"` explicite.
+Les zones de navigation du site étaient déjà correctement identifiées pour les technologies d'assistance. Seule la zone de contenu principal, citée par l'exemple de l'auditeur (p.32), ne l'était pas explicitement sur aucune page.
 
 ### Correctif
-Ajout de `role="main"` sur la balise `<main id="content">` des 10 pages du site.
+La zone de contenu principal est maintenant explicitement identifiée sur les 10 pages du site, conformément à la correction recommandée (p.32).
 
 ---
 
-## #26 — role="main" manquant sur /cgu (RGAA 12.6)
+## #26 — Critère 12.6 : zone de contenu principal manquante sur /cgu
 
-**Ticket :** [#26](https://github.com/anct-cnum/site-vitrine-conum/issues/26) (fermé) · **PR :** [#28](https://github.com/anct-cnum/site-vitrine-conum/pull/28) (fusionnée)
+**Critère RGAA 12.6**, rapport p.31-32 (même critère que #14). **Ticket :** [#26](https://github.com/anct-cnum/site-vitrine-conum/issues/26) — Corrigé.
 
 ### Constat
-Trouvé lors de la seconde passe d'audit approfondie : `app/cgu/page.tsx` (créé par #8, fusionné **après** #14 qui avait ajouté `role="main"` aux 10 pages existant à ce moment-là) n'avait pas repris ce pattern — régression ponctuelle non détectée par les tickets initiaux.
+Trouvé lors de la seconde passe d'audit approfondie : la page `/cgu`, créée après le correctif du #14, n'avait pas repris ce même correctif — une régression ponctuelle passée inaperçue.
 
 ### Correctif
-- Ajout de `role="main"` sur `app/cgu/page.tsx`
-- Bonus à coût nul (même passe d'audit) : ajout d'une prop `ctaSrOnlyContext` sur `BlocTexteImageSection` pour renforcer le contexte du lien "En savoir plus" de l'Accueil — déjà conforme via le h2 précédent immédiat, mais fragile si du contenu venait s'intercaler entre le titre et le lien.
+- La zone de contenu principal de `/cgu` est maintenant identifiée comme les autres pages.
+- En prime (coût nul, même relecture) : le lien "En savoir plus" de l'Accueil (bloc "Devenir conseiller numérique") a reçu un contexte explicite supplémentaire pour les lecteurs d'écran, par précaution — il était déjà conforme grâce au titre qui le précède immédiatement, mais ce renfort le rend plus robuste si le contenu de la page évolue.
 
 ---
 
-## #27 — Aria-label explicite du fil d'ariane (RGAA 9.2)
+## #27 — Critère 9.2 : intitulé du fil d'ariane
 
-**Ticket :** [#27](https://github.com/anct-cnum/site-vitrine-conum/issues/27) (fermé) · **PR :** [#29](https://github.com/anct-cnum/site-vitrine-conum/pull/29) (fusionnée)
+**Critère RGAA 9.2**, rapport p.20-21 (même critère que #13). **Ticket :** [#27](https://github.com/anct-cnum/site-vitrine-conum/issues/27) — Corrigé.
 
 ### Constat
-Trouvé lors de la seconde passe d'audit approfondie : c'est littéralement l'exemple illustrant le critère 9.2 dans le rapport source (page 21), jamais rapproché du code lors du ticket #13. Le composant DSFR `Breadcrumb` rend en dur `aria-label="vous êtes ici :"`.
+Trouvé lors de la seconde passe d'audit approfondie : c'est littéralement l'exemple illustrant ce critère dans le rapport d'audit (p.21 : fil d'ariane avec l'intitulé technique "vous êtes ici", jugé pas suffisamment explicite), qui n'avait pas été rapproché du code lors du ticket #13.
 
 ### Correctif
-Surcharge globale via l'API i18n du DSFR (`app/layout.tsx`) :
-```ts
-addBreadcrumbTranslations({
-  lang: "fr",
-  messages: { "navigation label": "Fil d'ariane" },
-});
-```
-Vérifié dans le navigateur : `aria-label="Fil d'ariane :"` sur `/plan-du-site`.
+Conformément à la correction recommandée par l'auditeur (« il est nécessaire de modifier l'attribut aria-label sur la balise `<nav>` pour lui donner une valeur plus explicite, `aria-label="Fil d'ariane"` », p.21), l'intitulé du fil d'ariane a été remplacé par "Fil d'ariane". Vérifié dans le navigateur sur la page Plan du site.
 
 ---
 
-## #15 — Formulaire de candidature conseiller (repo externe site-vitrine)
+## #15 — Critères 2.2, 10.12, 11.2, 11.5, 11.10, 11.11, 11.13 : formulaire de candidature
 
-**Ticket :** [#15](https://github.com/anct-cnum/site-vitrine-conum/issues/15) (fermé) · **Repo :** [anct-cnum/site-vitrine](https://github.com/anct-cnum/site-vitrine) · **PR :** [#356](https://github.com/anct-cnum/site-vitrine/pull/356) (fusionnée le 07/10/2026)
+**Critères RGAA** — 2.2 (Majeur, p.11), 10.12 (Bloquant, p.22-24), 11.2 (Majeur, p.24-25), 11.5 (Majeur, p.26-27), 11.10 (Majeur, p.28-29), 11.11 (Majeur, p.29-31), 11.13 (Mineur, p.31) — page concernée indiquée par l'auditeur : Candidature. **Ticket :** [#15](https://github.com/anct-cnum/site-vitrine-conum/issues/15) — Corrigé.
 
 ### Contexte
-Le formulaire de candidature conseiller (`/candidature-conseiller`) vit sur un repo séparé (`anct-cnum/site-vitrine`, React + Vite + Redux, distinct de ce repo Next.js) et concentrait la majorité des non-conformités de l'audit initial (2.2, 10.12 partiel, 11.2, 11.5, 11.10, 11.11, 11.13). Recodage lancé via un worktree Orca dédié avec un agent Claude, briefé sur le contrat d'API à préserver (`POST /candidature-conseiller`, payload `CandidatureConseillerInput` inchangé) et les non-conformités précises trouvées en lisant le code source.
+Le formulaire de candidature conseiller vit sur un projet séparé du site vitrine, et concentrait la majorité des non-conformités relevées par l'audit initial. Il a été recodé en reprenant, pour chaque critère ci-dessus, le constat et la correction préconisée par l'auditeur — en préservant strictement le fonctionnement de l'enregistrement des candidatures (même données envoyées, même traitement côté serveur).
 
-### Correctifs (un commit par critère)
-- **2.2** — Turnstile forcé en `language: 'fr'` (titre d'iframe explicite), widget englobé dans `role="group"` nommé
-- **10.12** — `.fr-notice__body` (encart "En résumé") passé en `flex-direction: column` ; débordement horizontal à 320px avec espacements RGAA corrigé
-- **11.2** — Label du champ date remplacé par la vraie question (au lieu de "Choisir une date" générique)
-- **11.5** — Groupes "situations"/"expérience"/"distance" nommés via `role="group"`/`role="radiogroup"` + `aria-labelledby`
-- **11.10** — Bug réel trouvé : `id` d'erreur codé en dur et dupliqué sur tous les champs, aucun `aria-describedby`. Corrigé : `id` unique par champ + `aria-describedby` + `aria-invalid`
-- **11.11** — Nouvelle prop `formatAttendu`, ajoutée au message d'erreur en cas d'erreur de format (email, téléphone)
-- **11.13** — `autoComplete="on"` générique → `given-name`/`family-name`/`email`/`tel`
+### Correctifs
+- **2.2** (p.11) — le cadre du défi de sécurité (captcha) a maintenant un titre explicite en français, conformément à l'exemple de l'auditeur sur ce même type de widget.
+- **10.12** (p.22-24) — l'encart récapitulatif "En résumé", cité par l'auditeur (p.24), est restructuré pour ne plus déborder de son cadre quand l'espacement du texte est redéfini par l'utilisateur.
+- **11.2** (p.24-25) — l'étiquette du champ de date de disponibilité reprend maintenant la vraie question posée, au lieu de l'intitulé générique "Choisir une date" relevé par l'auditeur comme exemple.
+- **11.5** (p.26-27) — chaque groupe de champs de même nature (situation, expérience, distance) a maintenant un nom explicite pour les technologies d'assistance.
+- **11.10** (p.28-29) — un bug a été trouvé en creusant ce critère : l'identifiant technique du message d'erreur était dupliqué sur tous les champs, et aucun champ en erreur n'était relié à son message. Corrigé : chaque champ en erreur est maintenant correctement annoncé et relié à son message.
+- **11.11** (p.29-31) — les messages d'erreur d'email et de téléphone précisent maintenant le format attendu, conformément à la recommandation de l'auditeur.
+- **11.13** (p.31) — les champs d'identité (prénom, nom, email, téléphone) sont maintenant correctement reconnus par le remplissage automatique du navigateur.
 
 ### Vérification
-Lint OK, 84 tests passent (80 avant, nouveaux tests par correctif), parcours navigateur complet avec requête API interceptée (aucune candidature réellement envoyée), payload conforme au contrat.
+Tous les tests automatisés passent (84, dont plusieurs nouveaux pour ces correctifs), parcours complet vérifié dans le navigateur, aucune candidature réellement envoyée pendant les tests.
 
-### Complément — reformulation du texte d'aide dupliqué (PR [#357](https://github.com/anct-cnum/site-vitrine/pull/357), fusionnée)
-Le texte d'aide sous la question "disponibilité" était un copier-coller de celui de la question "expérience" et faisait désormais partie du nom accessible du champ date. Remplacé par "Indiquez une date approximative si vous n'êtes pas encore certain(e)." — aide réelle plutôt que répétition. 84/84 tests toujours verts.
+### Complément — texte d'aide reformulé
+Le texte d'aide sous la question "disponibilité" (critère 11.2) était un copier-coller de celui d'une autre question, et faisait désormais partie du nom lu par les lecteurs d'écran pour ce champ. Remplacé par un texte propre au contexte : "Indiquez une date approximative si vous n'êtes pas encore certain(e)."
 
 ### Reste à faire (hors périmètre)
-- Formulaires structure et coordinateur : partagent les mêmes composants donc héritent de 11.10/11.13/2.2, mais leurs problèmes propres (11.2/11.5/10.12) n'ont pas été vérifiés
-- Largeur fixe de 300px du widget Turnstile (imposée par Cloudflare), touche les bords à 320px — non actionnable
+- Les formulaires "structure" et "coordinateur" du même projet partagent certains composants, donc bénéficient déjà de plusieurs correctifs — mais leurs problèmes propres n'ont pas été vérifiés.
+- Le cadre de vérification de sécurité a une largeur fixe imposée par le fournisseur (Cloudflare) qui touche les bords de l'écran sur mobile très étroit — non modifiable de notre côté.
 
 ---
 
-## #31 — Remplacement de la page Kit de communication (hors RGAA, demande connexe)
+## Critères 1.1, 1.2, 3.2, 8.5, 8.9, 9.1 : PDF de charte graphique
 
-**PR :** [#31](https://github.com/anct-cnum/site-vitrine-conum/pull/31) (fusionnée)
+**Critères RGAA** — 1.1 (Majeur, p.8), 1.2 (Majeur, p.9-10), 3.2 (Mineur, p.12), 8.5 (Majeur, p.16-17), 8.9 (Bloquant, p.17-18), 9.1 (Majeur, p.18-20) — page concernée indiquée par l'auditeur : PDF Charte graphique. **Ticket :** [#16](https://github.com/anct-cnum/site-vitrine-conum/issues/16) — Fermé, hors périmètre.
 
 ### Contexte
-Demande connexe (pas un correctif RGAA) : le contenu du kit de communication est désormais maintenu sur `docs.numerique.gouv.fr`. La page interne `/kit-communication` est supprimée au profit d'un lien externe.
+Demande connexe (pas elle-même un correctif RGAA) : le contenu du kit de communication (orthographe, charte graphique, logotypes, supports) est désormais maintenu sur une page externe (`docs.numerique.gouv.fr`). La page "Kit de communication" du site est donc supprimée, remplacée par un lien vers cette page externe (menu et plan du site). Les fichiers téléchargeables restent hébergés sur notre site — la page externe pointe directement vers eux.
 
-### Changements
-- Suppression de `app/kit-communication/page.tsx` et du composant `DocumentsSection` (n'était utilisé que par cette page)
-- `EnTete.tsx` et `plan-du-site/page.tsx` : lien "Kit de communication" → `https://docs.numerique.gouv.fr/docs/a6aa5288-156a-4670-8387-43ec3fd1458d/` (nouvel onglet)
-- `SkipLinks.tsx` : retrait de l'entrée devenue obsolète
-- Les PDF/ZIP (`charte-graphique-conseiller-numerique.pdf`, logotypes, supports) restent sur le serveur — le document externe pointe directement vers ces mêmes fichiers
-
-### Vérification
-`pnpm build` : succès, route absente des pages générées. Testé en navigateur.
-
-### Conséquence sur #16 (fermé)
-Le lien "Télécharger la charte graphique" sur la page Docs pointe vers le même fichier PDF que celui déjà hébergé ici (pas une version corrigée) — les défauts d'accessibilité du PDF (1.1, 3.2, 8.5, portions 1.2/8.9/9.1) restent présents tels quels. Mais le contenu étant désormais porté par cette page Docs externe, son suivi relève de l'équipe qui la gère plutôt que de ce repo. Ticket [#16](https://github.com/anct-cnum/site-vitrine-conum/issues/16) fermé sur cette base.
+### Constat et fermeture
+Le lien "Télécharger la charte graphique" sur cette page externe pointe vers le même fichier que celui déjà hébergé chez nous — ce n'est pas une version corrigée. Les défauts relevés par l'auditeur pour ce PDF (alternative textuelle des images, contraste du titre, titre de document absent des métadonnées, balisage, hiérarchie des titres) restent donc présents tels quels dans le fichier. Ce contenu étant désormais porté par la page externe, son suivi relève de l'équipe qui la gère plutôt que du site vitrine — ticket fermé sur cette base.
 
 ---
 
 ## Résultat de la seconde passe d'audit
 
-Une relecture indépendante et complète des 35 pages du rapport d'audit (texte **et** captures d'écran, y compris les recommandations données uniquement en image) a été menée pour vérifier, section par section, que le code actuel du site couvrait bien chaque recommandation en périmètre (hors formulaire de Candidature externe et hors PDF de charte graphique).
+Une relecture indépendante et complète des 35 pages du rapport d'audit (texte et captures d'écran, y compris les recommandations données uniquement en image) a été menée pour vérifier, critère par critère, que le site actuel couvrait bien chaque recommandation en périmètre (hors formulaire de Candidature et hors PDF de charte graphique, traités à part).
 
-**Constat global : tous les critères en périmètre sont couverts.** Seuls 2 écarts ponctuels ont été trouvés, tous deux introduits par des changements ultérieurs à leurs tickets d'origine (pages/composants créés ou modifiés après coup sans reprendre un pattern déjà établi ailleurs) — pas des oublis dans l'analyse initiale du rapport lui-même :
-- **#26** — `role="main"` manquant sur `/cgu` (page créée après le fix sitewide #14)
-- **#27** — `aria-label` du fil d'ariane non explicite (exemple de l'audit jamais rapproché du composant DSFR `Breadcrumb`)
+**Constat global : tous les critères en périmètre sont couverts.** Seuls 2 écarts ponctuels ont été trouvés, tous deux introduits par des changements ultérieurs à leur correction d'origine (pages ou composants créés ou modifiés après coup sans reprendre un correctif déjà en place ailleurs) — pas des oublis dans l'analyse initiale du rapport :
+- **#26** — critère 12.6 (p.31-32) : zone de contenu principal non identifiée sur `/cgu`, page créée après le correctif sitewide du #14
+- **#27** — critère 9.2 (p.20-21) : intitulé du fil d'ariane non explicite, exemple de l'audit jamais rapproché du composant concerné lors du #13
 
-Plus un point d'amélioration facultatif (coût nul, inclus dans #26) et une clarification de portée sur #9 (le second H1 masqué du sélecteur de thème DSFR concerne toutes les pages, pas seulement Formation — même diagnostic et même limitation, juste un intitulé de ticket corrigé).
+Plus un point d'amélioration facultatif (coût nul, inclus dans #26) et une clarification sur #9 (critère 9.1, p.18-20) : le second titre masqué du sélecteur de thème concerne toutes les pages, pas seulement Formation — même diagnostic et même limitation, juste une description corrigée.
 
-Un balayage systématique de tous les liens/boutons non-explicites du site a également été fait à cette occasion (au-delà du seul critère 6.1 relevé par l'audit) : aucun lien réellement non-conforme trouvé au-delà de celui déjà corrigé par #11.
+Un balayage systématique de tous les liens non-explicites du site a également été fait à cette occasion, au-delà des seuls exemples relevés par l'auditeur pour le critère 6.1 (p.13-15) : aucun lien réellement non-conforme trouvé au-delà de celui déjà corrigé par #11.
 
 ---
