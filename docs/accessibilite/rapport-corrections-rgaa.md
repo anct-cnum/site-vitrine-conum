@@ -2,7 +2,7 @@
 
 Suivi des corrections apportées suite à l'audit RGAA 4.1.2 réalisé par Arya Access (21/09/2026). Chaque section correspond à un ticket du board MIN/SEPT et à sa PR associée.
 
-**État global :** 10 PR fusionnées (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27 — #12 inclus dans #5) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · 2 tickets de relais hors périmètre (#15, #16).
+**État global :** 10 PR fusionnées sur site-vitrine-conum (#4, #5, #7, #8, #10, #11, #13, #14, #26, #27 — #12 inclus dans #5) + 1 PR fusionnée sur le repo externe site-vitrine (#15, formulaire de candidature) · #6 fermé sans code (lien déjà correct) · #9 sans code applicatif à corriger ici (limitation DSFR, portée reformulée sitewide) · #16 (PDF charte graphique) encore ouvert, relais vers l'équipe design.
 
 **Seconde passe d'audit (approfondie) :** une relecture indépendante du rapport complet (texte + captures d'écran) a été menée pour vérifier la couverture réelle des recommandations sur le code actuel. Elle a confirmé que tous les critères en périmètre étaient traités, à l'exception de 2 écarts ponctuels trouvés et corrigés (#26, #27) et d'un point d'amélioration facultatif (inclus dans #26). Voir la section [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit) en bas de document.
 
@@ -19,6 +19,7 @@ Sommaire :
 - [#14 — Rôles ARIA landmarks (RGAA 12.6)](#14--rôles-aria-landmarks-rgaa-126)
 - [#26 — role="main" manquant sur /cgu (RGAA 12.6)](#26--role-main-manquant-sur-cgu-rgaa-126)
 - [#27 — Aria-label explicite du fil d'ariane (RGAA 9.2)](#27--aria-label-explicite-du-fil-dariane-rgaa-92)
+- [#15 — Formulaire de candidature conseiller (repo externe site-vitrine)](#15--formulaire-de-candidature-conseiller-repo-externe-site-vitrine)
 - [Résultat de la seconde passe d'audit](#résultat-de-la-seconde-passe-daudit)
 
 ---
@@ -200,6 +201,32 @@ addBreadcrumbTranslations({
 });
 ```
 Vérifié dans le navigateur : `aria-label="Fil d'ariane :"` sur `/plan-du-site`.
+
+---
+
+## #15 — Formulaire de candidature conseiller (repo externe site-vitrine)
+
+**Ticket :** [#15](https://github.com/anct-cnum/site-vitrine-conum/issues/15) (fermé) · **Repo :** [anct-cnum/site-vitrine](https://github.com/anct-cnum/site-vitrine) · **PR :** [#356](https://github.com/anct-cnum/site-vitrine/pull/356) (fusionnée le 07/10/2026)
+
+### Contexte
+Le formulaire de candidature conseiller (`/candidature-conseiller`) vit sur un repo séparé (`anct-cnum/site-vitrine`, React + Vite + Redux, distinct de ce repo Next.js) et concentrait la majorité des non-conformités de l'audit initial (2.2, 10.12 partiel, 11.2, 11.5, 11.10, 11.11, 11.13). Recodage lancé via un worktree Orca dédié avec un agent Claude, briefé sur le contrat d'API à préserver (`POST /candidature-conseiller`, payload `CandidatureConseillerInput` inchangé) et les non-conformités précises trouvées en lisant le code source.
+
+### Correctifs (un commit par critère)
+- **2.2** — Turnstile forcé en `language: 'fr'` (titre d'iframe explicite), widget englobé dans `role="group"` nommé
+- **10.12** — `.fr-notice__body` (encart "En résumé") passé en `flex-direction: column` ; débordement horizontal à 320px avec espacements RGAA corrigé
+- **11.2** — Label du champ date remplacé par la vraie question (au lieu de "Choisir une date" générique)
+- **11.5** — Groupes "situations"/"expérience"/"distance" nommés via `role="group"`/`role="radiogroup"` + `aria-labelledby`
+- **11.10** — Bug réel trouvé : `id` d'erreur codé en dur et dupliqué sur tous les champs, aucun `aria-describedby`. Corrigé : `id` unique par champ + `aria-describedby` + `aria-invalid`
+- **11.11** — Nouvelle prop `formatAttendu`, ajoutée au message d'erreur en cas d'erreur de format (email, téléphone)
+- **11.13** — `autoComplete="on"` générique → `given-name`/`family-name`/`email`/`tel`
+
+### Vérification
+Lint OK, 84 tests passent (80 avant, nouveaux tests par correctif), parcours navigateur complet avec requête API interceptée (aucune candidature réellement envoyée), payload conforme au contrat.
+
+### Reste à faire (hors périmètre de cette PR)
+- Décision produit : un texte d'aide dupliqué par copier-coller fait désormais partie du nom accessible du champ date — à reformuler
+- Formulaires structure et coordinateur : partagent les mêmes composants donc héritent de 11.10/11.13/2.2, mais leurs problèmes propres (11.2/11.5/10.12) n'ont pas été vérifiés
+- Largeur fixe de 300px du widget Turnstile (imposée par Cloudflare), touche les bords à 320px — non actionnable
 
 ---
 
