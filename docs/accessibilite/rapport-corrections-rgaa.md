@@ -2,7 +2,7 @@
 
 Suivi des corrections apportées en réponse au **Rapport d'audit d'accessibilité RGAA 4.1** réalisé par Arya Access le 21/09/2026 (35 pages). Chaque section ci-dessous reprend un critère du rapport d'audit — numéro de critère, formulation officielle, niveau de non-conformité et référence de page — suivi du constat retenu et de la correction apportée.
 
-**État global :** la quasi-totalité des non-conformités relevées par l'audit est corrigée, sur le site vitrine comme sur le formulaire de candidature (projet séparé) · le critère 1.6 (Obligations d'affichage, schéma pluriannuel) est satisfait sans correction nécessaire, le lien existant ayant été confirmé valide · un écart (9.1, p.18-20) n'est pas actionnable de notre côté, la cause étant un composant tiers fourni par le DSFR · les occurrences situées dans le PDF de charte graphique relèvent désormais d'une page externe, hors de notre périmètre.
+**État global :** toutes les non-conformités relevées par l'audit et confirmées par l'auditeur sont corrigées, sur le site vitrine comme sur le formulaire de candidature (projet séparé) · le critère 1.6 (Obligations d'affichage, schéma pluriannuel) est satisfait sans correction nécessaire, le lien existant ayant été confirmé valide · un point soulevé de notre côté sur le critère 9.1 (second titre dans la fenêtre de réglages du thème) a été écarté par l'auditeur, qui a précisé la vraie cause du signalement (traitée en #34) · les occurrences situées dans le PDF de charte graphique relèvent désormais d'une page externe, hors de notre périmètre.
 
 **Synthèse :** sur les 18 critères non conformes relevés par l'audit, toutes les occurrences situées sur le site vitrine et sur le formulaire de candidature sont corrigées, plus 2 écarts non listés par l'audit trouvés lors d'une relecture approfondie du rapport (voir en fin de document). Restent non corrigées les occurrences situées dans le PDF de charte graphique (critères 1.1, 1.2, 3.2, 8.5, 8.9, 9.1) — le fichier lui-même n'a pas été modifié — mais leur suivi ne relève plus de notre périmètre depuis que ce contenu a été transféré vers une page externe gérée par une autre équipe.
 
@@ -12,7 +12,8 @@ Sommaire :
 - [#6 — Schéma pluriannuel d'accessibilité (obligations d'affichage)](#6--schéma-pluriannuel-daccessibilité-obligations-daffichage)
 - [#7 — Critère 10.12 : espacement du texte, page Label](#7--critère-1012--espacement-du-texte-page-label)
 - [#8 — Critère 13.3 : document bureautique sans alternative](#8--critère-133--document-bureautique-sans-alternative)
-- [#9 — Critère 9.1 : second titre masqué (composant DSFR)](#9--critère-91--second-titre-masqué-composant-dsfr)
+- [#9 — Critère 9.1 : clarification sur le titre de la fenêtre de réglages](#9--critère-91--clarification-sur-le-titre-de-la-fenêtre-de-réglages-non-conformité-écartée)
+- [#34 — Critère 9.1 : titres "Formation initiale" / "Formation continue"](#34--critère-91--titres-formation-initiale--formation-continue)
 - [#10 — Critères 1.2 et 8.9 : images et balisage, Accueil](#10--critères-12-et-89--images-et-balisage-accueil)
 - [#11 — Critère 6.1 : lien explicite, page Formation](#11--critère-61--lien-explicite-page-formation)
 - [#13 — Critère 9.2 : cohérence de structure, Plan du site](#13--critère-92--cohérence-de-structure-plan-du-site)
@@ -112,15 +113,30 @@ Hiérarchie des titres testée dans le navigateur : cohérente sur les 26 titres
 
 ---
 
-## #9 — Critère 9.1 : second titre masqué (composant DSFR)
+## #9 — Critère 9.1 : clarification sur le titre de la fenêtre de réglages (non-conformité écartée)
 
-**Critère RGAA 9.1** — « Dans chaque page web, l'information est-elle structurée par l'utilisation appropriée de titres ? » — **Majeur**, rapport p.18-20 (page concernée indiquée par l'auditeur : Formation). **Ticket :** [#9](https://github.com/anct-cnum/site-vitrine-conum/issues/9) — Pas de correction de code possible.
+**Critère RGAA 9.1**, rapport p.18-20 (page concernée indiquée par l'auditeur : Formation). **Ticket :** [#9](https://github.com/anct-cnum/site-vitrine-conum/issues/9) — Fermé, ce n'est pas un défaut.
 
 ### Investigation
-La hiérarchie des titres propre à la page `/formation`, telle qu'illustrée par l'exemple de l'auditeur (p.19), est correcte : aucun saut constaté. Un second titre de niveau 1 ("Paramètres d'affichage") a en revanche été trouvé dans le code de la page — il appartient au sélecteur de thème clair/sombre du DSFR, un composant fourni par l'État et utilisé tel quel, présent sur toutes les pages du site, pas seulement Formation. Ce titre est masqué tant que la fenêtre de réglages n'est pas ouverte, et n'est normalement pas annoncé par les lecteurs d'écran ; un outil d'audit qui lit le code brut (type HeadingsMap, cité par l'auditeur parmi ses outils p.3) le détecte en revanche, ce qui explique probablement le signalement.
+En examinant la page `/formation`, un second titre de niveau 1 ("Paramètres d'affichage") a été repéré dans le code — il appartient à la fenêtre de réglages du thème clair/sombre du DSFR, présente sur toutes les pages du site. Nous avons interrogé l'auditeur pour savoir si c'était la cause du signalement.
 
-### Pourquoi aucune correction
-Ce titre fait partie du composant fourni par le DSFR, pas de notre code applicatif. Un commentaire détaillé a été laissé sur le ticket pour décider de la suite (accepter comme limitation connue, ou signaler au mainteneur du DSFR) — une confirmation de l'auditeur sur ce diagnostic serait utile avant de trancher.
+### Réponse de l'auditeur
+Ce n'est pas un défaut : une fenêtre modale est considérée en accessibilité comme une page à part entière, et il est normal que la numérotation des titres y reparte à 1. Les technologies d'assistance ne restituent pas ce titre tant que la fenêtre n'est pas ouverte. Ticket fermé sur cette base.
+
+### La vraie cause, précisée par l'auditeur
+Le véritable problème derrière ce signalement sur la page Formation : les libellés "Formation initiale" et "Formation continue", qui introduisent chacun le contenu d'une carte, n'étaient pas structurés comme des titres. Voir [#34](https://github.com/anct-cnum/site-vitrine-conum/issues/34), traité ci-dessous.
+
+---
+
+## #34 — Critère 9.1 : titres "Formation initiale" / "Formation continue"
+
+**Critère RGAA 9.1**, rapport p.18-20 (même critère que #9, précisé directement par l'auditeur). **Ticket :** [#34](https://github.com/anct-cnum/site-vitrine-conum/issues/34) — Corrigé.
+
+### Constat
+Les libellés "Formation initiale" et "Formation continue", qui introduisent chacun le contenu d'une carte (titre, description, organismes de formation), n'étaient pas structurés comme des titres.
+
+### Correctif
+Conformément à la recommandation de l'auditeur : "Formation initiale"/"Formation continue" sont maintenant des titres de niveau 3, et les titres de carte ("Acquérir les fondamentaux...", "Renforcer ses compétences...") passent en titre de niveau 4 pour ne pas avoir deux niveaux 3 imbriqués. Aucun changement visuel (taille, graisse et espacement identiques avant/après, vérifié dans le navigateur).
 
 ---
 
@@ -248,7 +264,7 @@ Une relecture indépendante et complète des 35 pages du rapport d'audit (texte 
 - **#26** — critère 12.6 (p.31-32) : zone de contenu principal non identifiée sur `/cgu`, page créée après le correctif sitewide du #14
 - **#27** — critère 9.2 (p.20-21) : intitulé du fil d'ariane non explicite, exemple de l'audit jamais rapproché du composant concerné lors du #13
 
-Plus un point d'amélioration facultatif (coût nul, inclus dans #26) et une clarification sur #9 (critère 9.1, p.18-20) : le second titre masqué du sélecteur de thème concerne toutes les pages, pas seulement Formation — même diagnostic et même limitation, juste une description corrigée.
+Plus un point d'amélioration facultatif (coût nul, inclus dans #26) et un échange avec l'auditeur sur le critère 9.1 (p.18-20, #9) : l'hypothèse d'un second titre masqué du sélecteur de thème comme cause du signalement a été écartée (comportement normal d'une fenêtre modale), et la vraie cause a été précisée par l'auditeur — traitée en #34.
 
 Un balayage systématique de tous les liens non-explicites du site a également été fait à cette occasion, au-delà des seuls exemples relevés par l'auditeur pour le critère 6.1 (p.13-15) : aucun lien réellement non-conforme trouvé au-delà de celui déjà corrigé par #11.
 
