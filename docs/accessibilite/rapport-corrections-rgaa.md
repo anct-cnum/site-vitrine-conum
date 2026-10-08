@@ -238,9 +238,15 @@ Tous les tests automatisés passent (84, dont plusieurs nouveaux pour ces correc
 ### Complément — texte d'aide reformulé
 Le texte d'aide sous la question "disponibilité" (critère 11.2) était un copier-coller de celui d'une autre question, et faisait désormais partie du nom lu par les lecteurs d'écran pour ce champ. Remplacé par un texte propre au contexte : "Indiquez une date approximative si vous n'êtes pas encore certain(e)."
 
+### Complément — formulaires structure et coordinateur
+Les formulaires "structure" (`/candidature-poste-conseiller`) et "coordinateur" (`/candidature-poste-coordinateur`) partagent plusieurs composants avec le formulaire conseiller, donc bénéficiaient déjà de certains correctifs. Leurs questions propres ont été vérifiées à leur tour :
+- **Critère 11.5** — 3 groupes de champs sans nom accessible ("Votre structure est", "Avez-vous déjà identifié un candidat ?", "Le coordinateur") : reliés à leur question.
+- **Critère 11.2** — étiquette du champ de date de début de mission ("Choisir une date" générique) : reprend maintenant la vraie question, sur les deux formulaires.
+- Vérifié déjà conforme : l'encart "Engagement" (hérite du correctif 10.12 de l'encart "En résumé") et le champ SIRET/RIDET.
+
 ### Reste à faire (hors périmètre)
-- Les formulaires "structure" et "coordinateur" du même projet partagent certains composants, donc bénéficient déjà de plusieurs correctifs — mais leurs problèmes propres n'ont pas été vérifiés.
 - Le cadre de vérification de sécurité a une largeur fixe imposée par le fournisseur (Cloudflare) qui touche les bords de l'écran sur mobile très étroit — non modifiable de notre côté.
+- Ni le formulaire structure ni le formulaire coordinateur ne sont accessibles depuis le site vitrine ou depuis la navigation du site de candidature lui-même (uniquement par URL directe) — sans lien avec l'accessibilité, à signaler si pertinent.
 
 ---
 
