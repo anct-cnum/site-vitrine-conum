@@ -27,17 +27,17 @@ export default function CarteVolet({
       className={styles.carte}
       style={{ "--couleur-fond": `var(${couleurFond})` } as CSSProperties}
     >
-      <div
+      <h3
         className={`${styles.entete} ${fr.cx("fr-py-3v", "fr-px-6v", "fr-text--bold")}`}
       >
         {entete}
-      </div>
+      </h3>
       <div
         className={`${styles.contenu} ${fr.cx("fr-pt-6v", "fr-px-6v", "fr-pb-8v")}`}
       >
-        <h3 className={`${styles.titre} ${fr.cx("fr-m-0", "fr-text--bold")}`}>
+        <h4 className={`${styles.titre} ${fr.cx("fr-m-0", "fr-text--bold")}`}>
           {titre}
-        </h3>
+        </h4>
         <p className={fr.cx("fr-m-0")}>{texte}</p>
         <div>
           <p className={`${styles.organismesTitre} ${fr.cx("fr-m-0")}`}>
