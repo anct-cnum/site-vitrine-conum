@@ -40,12 +40,9 @@ export default function RecrutementSection() {
           className={fr.cx("fr-mt-5w")}
           linkProps={{
             href: "https://candidature.conseiller-numerique.gouv.fr/candidature-conseiller",
-            target: "_blank",
-            rel: "noopener noreferrer",
           }}
         >
           Je postule
-          <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
         </Button>
       </div>
     </section>
