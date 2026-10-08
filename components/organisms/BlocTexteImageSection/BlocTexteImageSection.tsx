@@ -96,6 +96,7 @@ export default function BlocTexteImageSection({
             <img
               src={img.src}
               alt={img.alt}
+              aria-hidden={img.alt === "" ? true : undefined}
               className={`${styles.img} ${imgTailleFixe ? styles.imgTailleFixe : ""}`}
             />
           </div>

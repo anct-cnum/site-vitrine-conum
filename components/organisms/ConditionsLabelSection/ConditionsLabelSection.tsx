@@ -12,6 +12,7 @@ export default function ConditionsLabelSection() {
         <img
           src="/images/condition-label-illustration.svg"
           alt=""
+          aria-hidden="true"
           className={styles.image}
         />
       </div>
