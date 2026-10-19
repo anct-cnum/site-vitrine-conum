@@ -1,6 +1,6 @@
 # Contre-audit Arya Access #1 — état avant/après
 
-Suivi des points relevés par le contre-audit RGAA 4.1 d'Arya Access (grille `grille_conformite_RGAA_4.1_ARYA.ods`, échantillon mis à jour P01→P10). Capturé en direct sur la prod (`conseiller-numerique.gouv.fr` et `candidature.conseiller-numerique.gouv.fr`) le 19/10/2026, avant tout déploiement des correctifs.
+Suivi des points relevés par le contre-audit RGAA 4.1 d'Arya Access (grille `grille_conformite_RGAA_4.1_ARYA.ods`, échantillon mis à jour P01→P10). État "avant" capturé en direct sur la prod (`conseiller-numerique.gouv.fr` et `candidature.conseiller-numerique.gouv.fr`) le 19/10/2026 avant tout déploiement ; état "après en prod" confirmé le même jour après déploiement des PR #38, #39 (site-vitrine-conum) et #360, #361 (site-vitrine).
 
 Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque** = point d'attention sur un critère déjà jugé conforme (facultatif).
 
@@ -16,7 +16,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Après (vérifié en local sur la branche) :** `alt=""` + `aria-hidden="true"`.
 ![après](apres-1.2-logo-accueil.png)
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — `alt=""` + `aria-hidden="true"` sur le logo.
 
 ---
 
@@ -30,7 +30,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Après (vérifié en local) :** le `<li>` passe à `display:none`.
 ![après](apres-8.9-header-li-label.png)
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — le `<li>` passe à `display:none`.
 
 ---
 
@@ -51,7 +51,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Après (vérifié en local) :** texte visible remplacé par "Devenir conseiller numérique" (le `sr-only` devenu redondant est retiré).
 ![après](apres-6.1-en-savoir-plus.png)
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — lien "Devenir conseiller numérique".
 
 ---
 
@@ -63,7 +63,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Après (vérifié en local) :** "Voir les garanties de [partenaire]" pour les 4 liens.
 ![après](apres-6.1-cgu-garanties.png)
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — "Voir les garanties de CleverCloud/SendingBlue/Scalingo/Pix" pour les 4 liens.
 
 ---
 
@@ -77,7 +77,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Après (vérifié en local) :** "... Format : 10/10/2010." ajouté au texte d'aide.
 ![après](apres-11.2-candidature-date-format.png)
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — "... Format : 10/10/2010." présent dans le texte d'aide.
 
 ---
 
@@ -88,7 +88,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 
 **Après (vérifié en local) :** `autoComplete="postal-code"`.
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — `autoComplete="postal-code"`.
 
 ---
 
@@ -102,7 +102,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Après (vérifié en local) :** 4 titres de niveau 2, structure `h1 > h2×4` sans saut de niveau.
 ![après](apres-9.1-9.2-10.10-12.6-candidature-full.png)
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — 4 `<h2>` ("Vos informations de contact", "Votre situation et expérience", "Votre disponibilité", "Votre motivation").
 
 ---
 
@@ -114,7 +114,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 
 **Après (vérifié en local) :** `document.querySelector('main')` non nul.
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — `<main>` présent.
 
 ---
 
@@ -126,7 +126,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 
 **Après (vérifié en local) :** `aria-current="location"`.
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — `aria-current="location"`.
 
 ---
 
@@ -138,7 +138,7 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 
 **Après (vérifié en local) :** `role="navigation"` présent.
 
-**Après en prod :** _à vérifier après déploiement._
+**Après en prod :** confirmé — `role="navigation"` présent.
 
 ---
 
