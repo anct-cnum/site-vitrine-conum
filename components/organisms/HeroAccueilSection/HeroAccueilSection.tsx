@@ -18,7 +18,8 @@ export default function HeroAccueilSection() {
       >
         <Image
           src={logoDispositif}
-          alt="Conseillers numériques France Services"
+          alt=""
+          aria-hidden="true"
           className={styles.logo}
           priority
           height={128}
