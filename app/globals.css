@@ -4,6 +4,13 @@
   display: none !important;
 }
 
+/* Le composant Header DSFR enveloppe chaque quickAccessItem dans un <li> sans
+   exposer de className sur ce <li> : on masque donc aussi le <li> englobant
+   pour qu'il ne soit pas restitué par les technologies d'assistance (RGAA 8.9). */
+li:has(> .tmpLabelHidden) {
+  display: none !important;
+}
+
 .titre-h1 {
   color: var(--text-title-blue-france);
   font-size: 3rem;
