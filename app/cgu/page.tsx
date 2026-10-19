@@ -51,7 +51,7 @@ const SOUS_TRAITANTS = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      clever-cloud.com/en/security
+      Voir les garanties de CleverCloud
       <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
     </a>,
   ],
@@ -66,7 +66,7 @@ const SOUS_TRAITANTS = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      fr.sendinblue.com/rgpd
+      Voir les garanties de SendingBlue
       <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
     </a>,
   ],
@@ -81,7 +81,7 @@ const SOUS_TRAITANTS = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      scalingo.com/fr
+      Voir les garanties de Scalingo
       <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
     </a>,
   ],
@@ -96,7 +96,7 @@ const SOUS_TRAITANTS = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      pix.fr/politique-protection-donnees-personnelles-app
+      Voir les garanties de Pix
       <span className="fr-sr-only"> (ouvre une nouvelle fenêtre)</span>
     </a>,
   ],

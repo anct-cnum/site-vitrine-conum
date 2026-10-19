@@ -25,7 +25,12 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Avant (prod) :** le composant `Header` (DSFR) génère un `<li>` par élément de `quickAccessItems`. La classe `tmpLabelHidden` (`display:none !important`) est posée sur le `<a>` "Demander le label", pas sur le `<li>` englobant — contrairement au lien de nav "Le label" où `tmpLabelHidden` est bien sur le `<li>` (`fr-nav__item tmpLabelHidden`). Le `<li>` du header reste donc dans la liste (`display:flex`/`list-item`), ce qui peut être compté par certaines technologies d'assistance même si son contenu est invisible.
 ![avant](avant-8.9-header-li-label.png)
 
-**Après :** _à corriger._
+**Correctif :** règle CSS générique `li:has(> .tmpLabelHidden) { display: none !important; }` dans `globals.css` (le composant Header DSFR n'expose pas de className sur le `<li>` généré).
+
+**Après (vérifié en local) :** le `<li>` passe à `display:none`.
+![après](apres-8.9-header-li-label.png)
+
+**Après en prod :** _à vérifier après déploiement._
 
 ---
 
@@ -43,7 +48,10 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Avant (prod) :** texte visible "En savoir plus", complété par un texte `sr-only` (" sur comment devenir conseiller numérique") donnant un nom accessible déjà explicite : *"En savoir plus sur comment devenir conseiller numérique"*. Conforme techniquement (statut C), l'auditeur suggère de rendre le texte **visible** lui-même plus explicite.
 ![avant](avant-6.1-en-savoir-plus.png)
 
-**Après :** _à corriger (texte visible → "Devenir conseiller numérique")._
+**Après (vérifié en local) :** texte visible remplacé par "Devenir conseiller numérique" (le `sr-only` devenu redondant est retiré).
+![après](apres-6.1-en-savoir-plus.png)
+
+**Après en prod :** _à vérifier après déploiement._
 
 ---
 
@@ -52,7 +60,10 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Avant (prod) :** dans le tableau "Sous-traitants de la plateforme", les liens de la colonne Garanties affichent l'URL brute comme texte (ex. "clever-cloud.com/en/security", "fr.sendinblue.com/rgpd", "scalingo.com/fr", "pix.fr/politique-protection-donnees-personnelles-app").
 ![avant](avant-6.1-cgu-garanties.png)
 
-**Après :** _à corriger (texte "Voir les garanties de [partenaire]")._
+**Après (vérifié en local) :** "Voir les garanties de [partenaire]" pour les 4 liens.
+![après](apres-6.1-cgu-garanties.png)
+
+**Après en prod :** _à vérifier après déploiement._
 
 ---
 
@@ -86,7 +97,12 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 **Avant (prod) :** les 4 sections du formulaire ("Vos informations de contact", "Votre situation et expérience", "Votre disponibilité", "Votre motivation") sont des `<legend>` de `<fieldset>`, pas des titres de niveau 2.
 ![avant](avant-9.1-9.2-10.10-12.6-candidature-sidebar.png)
 
-**Après :** _à corriger._
+**Correctif :** `<fieldset>`/`<legend>` remplacés par `<section aria-labelledby="...">`/`<h2>` sur les 4 sections (`InformationsDeContact.jsx`, `SituationEtExperience.jsx`, `Disponibilite.jsx`, `Motivation.jsx`). Les `id` d'ancrage du sommaire sont conservés sur les `<section>`. Nettoyage du hack CSS `float:left` qui ne s'appliquait qu'au rendu particulier de `<legend>`.
+
+**Après (vérifié en local) :** 4 titres de niveau 2, structure `h1 > h2×4` sans saut de niveau.
+![après](apres-9.1-9.2-10.10-12.6-candidature-full.png)
+
+**Après en prod :** _à vérifier après déploiement._
 
 ---
 
@@ -94,7 +110,11 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 
 **Avant (prod) :** `document.querySelector('main')` → `null`, le corps de la page n'est contenu dans aucune balise `<main>`.
 
-**Après :** _à corriger._
+**Correctif :** `<Routes>` encapsulé dans `<main>` au niveau de `App.js` — corrige la zone de contenu principal sur toutes les pages de l'application (candidature conseiller, structure, coordinateur, confirmations), pas seulement P06.
+
+**Après (vérifié en local) :** `document.querySelector('main')` non nul.
+
+**Après en prod :** _à vérifier après déploiement._
 
 ---
 
@@ -102,7 +122,11 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 
 **Avant (prod) :** l'ancre active du sommaire latéral porte `aria-current="page"`.
 
-**Après :** _à corriger (`aria-current="location"`)._
+**Correctif :** `components/Sommaire.jsx` (composant partagé par les 3 formulaires) — `aria-current="location"`.
+
+**Après (vérifié en local) :** `aria-current="location"`.
+
+**Après en prod :** _à vérifier après déploiement._
 
 ---
 
@@ -110,7 +134,11 @@ Légende : **NC** = non-conformité relevée par le contre-audit · **Remarque**
 
 **Avant (prod) :** le `<nav class="fr-sidemenu" aria-label="Sommaire">` n'a pas d'attribut `role="navigation"` explicite (seul le rôle implicite HTML5 est présent). Le `<nav>` du menu principal (`fr-nav`), lui, a déjà `role="navigation"` explicite.
 
-**Après :** _à corriger._
+**Correctif :** `role="navigation"` ajouté sur `components/Sommaire.jsx`.
+
+**Après (vérifié en local) :** `role="navigation"` présent.
+
+**Après en prod :** _à vérifier après déploiement._
 
 ---
 
