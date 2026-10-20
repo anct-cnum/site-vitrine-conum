@@ -15,6 +15,7 @@ export default function PiedDePage() {
       homeLinkProps={{
         href: "/",
         title: "Accueil - Conseiller numérique",
+        "aria-label": "Retour à l'accueil Conseiller numérique",
       }}
       accessibility={STATUT_ACCESSIBILITE}
       accessibilityLinkProps={{
