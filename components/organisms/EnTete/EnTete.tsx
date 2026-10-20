@@ -20,6 +20,7 @@ export default function EnTete() {
       homeLinkProps={{
         href: "/",
         title: "Accueil - Conseiller numérique",
+        "aria-label": "Retour à l'accueil Conseiller numérique",
       }}
       serviceTitle={
         <>
