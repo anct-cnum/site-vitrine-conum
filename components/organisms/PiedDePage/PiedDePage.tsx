@@ -37,7 +37,7 @@ export default function PiedDePage() {
         </>
       }
       operatorLogo={{
-        alt: "Agence Nationale de la Cohésion des Territoires - Société numérique",
+        alt: "",
         imgUrl: "/images/logo-ANCT.svg",
         orientation: "horizontal",
       }}

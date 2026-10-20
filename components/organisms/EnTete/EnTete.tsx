@@ -23,11 +23,11 @@ export default function EnTete() {
         "aria-label": "Retour à l'accueil Conseiller numérique",
       }}
       serviceTitle={
-        <>
+        <span aria-hidden="true">
           CONSEILLER
           <br />
           NUMÉRIQUE
-        </>
+        </span>
       }
       operatorLogo={{
         orientation: "horizontal",
