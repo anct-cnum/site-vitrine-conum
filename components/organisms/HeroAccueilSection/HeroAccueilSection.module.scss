@@ -2,7 +2,7 @@
   position: relative;
   background-color: var(--background-alt-brown-caramel);
 
-  @media (min-width: 80em) {
+  @media (min-width: 92em) {
     background-image:
       url("/images/hero/hero-decor-gauche.svg"),
       url("/images/hero/hero-decor-droite.svg");
@@ -62,7 +62,7 @@
   width: 100%;
   height: auto;
 
-  @media (min-width: 80em) {
+  @media (min-width: 92em) {
     display: none;
   }
 }
