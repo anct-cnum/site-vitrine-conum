@@ -38,9 +38,6 @@ export default function PlanDuSitePage() {
             <a href="/">Accueil</a>
           </li>
           <li>
-            <a href="/label">Label Conseiller numérique</a>
-          </li>
-          <li>
             <a href="/devenir-conseiller">Devenir Conseiller numérique</a>
           </li>
           <li>
